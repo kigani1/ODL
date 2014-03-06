@@ -1,3 +1,81 @@
+/*ANIMATED ELEMENTS*/
+@include keyframes(spaceboots) {
+  0% {@include vendor(transform, translate(2px, 1px) rotate(0deg)); }
+  10% {@include vendor(transform, translate(-1px, -2px) rotate(-1deg)); }
+  20% { @include vendor(transform, translate(-3px, 0px) rotate(1deg)); }
+  30% {@include vendor( transform, translate(0px, 2px) rotate(0deg)); }
+  40% {@include vendor( transform, translate(1px, -1px) rotate(1deg)); }
+  50% {@include vendor( transform, translate(-1px, 2px) rotate(-1deg)); }
+  60% {@include vendor( transform, translate(-3px, 1px) rotate(0deg)); }
+  70% {@include vendor( transform, translate(2px, 1px) rotate(-1deg)); }
+  80% {@include vendor( transform, translate(-1px, -1px) rotate(1deg)); }
+  90% {@include vendor( transform, translate(2px, 2px) rotate(0deg)); }
+  100% {@include vendor(transform, translate(1px, -2px) rotate(-1deg)); }
+}
+
+.shake:hover {
+  @include vendor(animation, spaceboots 0.8s linear infinite);
+  -webkit-transform-origin:50% 50%;
+
+}
+.animate li{
+  //position: absolute;
+  @include vendor(transition, all 2s);
+  margin-right: 60px;
+}
+#animate-el-1{
+  margin-top: 50px;
+  margin-left: 70px;
+  opacity: 0;
+  &.done{
+    opacity: 1;
+  }
+  &:hover{
+    @include vendor(transform, rotate(360deg));
+  }
+}
+#animate-el-2{
+  clear: right;
+  @include vendor(transform, translate(-50px, 0));
+  &.done{
+    @include vendor(transform, translate(0, 0));
+  }
+}
+#animate-el-3{
+  position: relative;
+margin-top: -230px;
+  @include vendor(transform, translate(0, -100px));
+  &.done{
+    @include vendor(transform, translate(0, 0));
+    &:hover{
+      .test{
+        opacity: 1;
+      }
+    }
+  }
+}
+#animate-el-4{
+  margin-top: 20px;
+  @include vendor(transform, translate(50px, 0));
+  &.done{
+    @include vendor(transform, translate(0, 0));
+  }
+}
+#animate-el-5{
+  @include vendor(transform, translate(100px, 0));
+  &.done{
+    @include vendor(transform, translate(0, 0));
+  }
+}
+.test{
+  opacity: 0;
+  top: 39px;
+  left: 37px;
+  position: absolute;
+  @include vendor(transition, all 0.5s);
+}
+
+/*TABLE*/
 .tabular-info{
   width: 100%;
   background: $table-bg-color;
@@ -72,12 +150,16 @@ th.sorttable_sorted .icon-sortable, th.sorttable_sorted_reverse .icon-sortable{
     }
   }
 }
+/*GOOGLE MAP*/
 .google-map{
   width: 100%;
   height: 435px;
   border: 5px solid #292e34;
 }
+
+/*--------------------- desktop version ----------------*/
 @include media-query(lap-and-up){
+  /*TABLE*/
   .tabular-info{
     th, td{
       padding: 20px;
@@ -87,7 +169,9 @@ th.sorttable_sorted .icon-sortable, th.sorttable_sorted_reverse .icon-sortable{
     }
   }
 }
+/*--------------------- mobile version ----------------*/
 @include media-query(palm){
+  /*TABLE*/
   thead tr {
     position: absolute;
     top: -9999px;

@@ -1,6 +1,8 @@
+$random : random(5);
 .content-wrapper{
   max-width: 1160px;
   margin: 0 auto;
+  position: relative;
   h2{
     margin: $base-spacing-unit 0;
   }
@@ -35,6 +37,7 @@ header{
       text-decoration: none;
     }
   }
+
 }
 
 section{
@@ -72,3 +75,5 @@ footer{
     padding: 0 10px;
   }
 }
+
+

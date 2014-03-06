@@ -3,6 +3,20 @@
     #{$prefix}#{$property}: $value;
   }
 }
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
 
 $palm-end: $lap-start - 1px;
 $lap-end:  $desk-start - 1px;
