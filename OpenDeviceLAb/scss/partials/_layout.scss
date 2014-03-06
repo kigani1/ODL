@@ -1,0 +1,36 @@
+
+@include media-query(lap-and-up){
+.l-float-list li,
+.l-float-item{
+  float: left;
+}
+.l-float-item-right{
+  float: right;
+}
+.l-three-in-row{
+  li{
+    width: 33.3%;
+    padding-right: $base-spacing-unit-medium;
+  }
+  li:nth-of-type(3n){
+    padding-right: 0;
+  }
+}
+.l-two-in-row{
+  .l-float-item:first-child{
+    width: 60%;
+    padding-right: 45px;
+  }
+  .l-float-item:nth-child(2){
+    width: 40%;
+  }
+}
+
+}
+
+@include media-query(desk){
+.l-additional-gutter{
+  padding-left: 100px;
+  padding-right: 100px;
+}
+}

@@ -1,0 +1,43 @@
+html, body {
+  -webkit-text-size-adjust: 100%;
+}
+body{
+  font-family: Arial, no-serif;
+  font-size: 16px;
+  color: #c6bfc6;
+  background: #fff;
+  line-height: 1.4em;
+}
+
+/*----- Main headings---------*/
+h1, .page-main-heading {
+  font-size: 32px;
+  color: $heading-color-light;
+  font-weight: bold;
+  line-height: 1.4em;
+}
+h2, .secondary-heading, {
+  font-size: 20px;
+  line-height: 1.4em;
+  color: $heading-color-light;
+  font-weight: bold;
+}
+.section-heading {
+  font-size: 24px;
+  line-height: 1.2em;
+  font-weight: bold;
+}
+
+/*----- Paragraphs ----------*/
+
+
+
+/*----- Links ----------*/
+
+a{
+  text-decoration: none;
+  color: $links-color;
+  &:hover{
+    text-decoration: underline;
+  }
+}
