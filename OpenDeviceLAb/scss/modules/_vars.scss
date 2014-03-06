@@ -12,15 +12,28 @@ $color-white: #fff;
 $color-black: #000;
 $color-grey-blue: #3a424d;
 $color-grey-blue-dark:  #292d36;
-$color-grey: #c5bec6;
-$color-grey-light: #efeaf0;
+$color-grey: #c6bfc6;
+$color-grey-light: #c5bec6;
+$color-grey-lightest: #efeaf0;
 $color-turquoise: #62c4b5;
+$color-jade: #2c6a5f;
+$color-dark-green: #2a6c62;
 
 
-$links-color: $color-turquoise;
+
+$links-color-light: $color-turquoise;
+$links-color-dark: $color-jade;
 
 $heading-color-light: $color-white;
 $heading-color-dark: $color-black;
 
+$text-color-lightest: $color-white;
+$text-color-light: $color-grey;
+$text-color-dark: $color-black;
+
 $bg-color-theme-dark: $color-grey-blue;
-$bg-color-theme-light: $color-grey;
+$bg-color-theme-light: $color-grey-light;
+$bg-color-theme-lightest: $color-white;
+
+$button-bg-color: $color-dark-green;
+$table-bg-color: $color-grey-lightest;

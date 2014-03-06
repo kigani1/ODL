@@ -398,7 +398,7 @@ body {
   font-family: Arial, no-serif;
   font-size: 16px;
   color: #c6bfc6;
-  background: #fff;
+  background: white;
   line-height: 1.4em; }
 
 /*----- Main headings---------*/
@@ -460,7 +460,7 @@ header {
   background: #c5bec6;
   padding: 30px 0; }
   header .logo a {
-    color: #000;
+    color: black;
     text-transform: uppercase; }
     header .logo a:hover {
       text-decoration: none; }
@@ -468,7 +468,7 @@ header {
     clear: both;
     max-width: 390px; }
   header .button {
-    color: #fff;
+    color: white;
     background: #2a6c62;
     font-weight: bold;
     padding: 25px 35px;
@@ -494,16 +494,16 @@ section {
 section:nth-of-type(2n+1) {
   background-color: #3a424d; }
   section:nth-of-type(2n+1) .section-heading {
-    color: #fff; }
+    color: white; }
 
 section:nth-of-type(2n) .section-heading {
-  color: #000; }
+  color: black; }
 
 footer {
   vertical-align: middle;
   background: #292d36;
   padding: 15px;
-  color: #fff; }
+  color: white; }
 
 @media (max-width: 1024px) {
   .content-wrapper {
@@ -512,19 +512,36 @@ footer {
   width: 100%;
   background: #efeaf0; }
   .tabular-info thead {
-    background: #fff;
+    background: white;
     font-weight: bold; }
     .tabular-info thead th {
       text-align: left; }
+    .tabular-info thead #sorttable_sortrevind,
+    .tabular-info thead #sorttable_sortfwdind,
     .tabular-info thead .icon-sortable {
       position: relative;
-      display: inline-block;
-      height: 10px; }
-      .tabular-info thead .icon-sortable:before, .tabular-info thead .icon-sortable:after {
+      display: inline-block; }
+      .tabular-info thead #sorttable_sortrevind:before, .tabular-info thead #sorttable_sortrevind:after,
+      .tabular-info thead #sorttable_sortfwdind:before,
+      .tabular-info thead #sorttable_sortfwdind:after,
+      .tabular-info thead .icon-sortable:before,
+      .tabular-info thead .icon-sortable:after {
         display: block;
         position: absolute;
         margin-left: 5px;
         vertical-align: middle; }
+    .tabular-info thead #sorttable_sortrevind,
+    .tabular-info thead #sorttable_sortfwdind {
+      height: 15px; }
+      .tabular-info thead #sorttable_sortrevind:after,
+      .tabular-info thead #sorttable_sortfwdind:after {
+        top: 0; }
+    .tabular-info thead #sorttable_sortrevind:after {
+      content: "\25B4"; }
+    .tabular-info thead #sorttable_sortfwdind:after {
+      content: "\25BE"; }
+    .tabular-info thead .icon-sortable {
+      height: 10px; }
       .tabular-info thead .icon-sortable:before {
         content: "\25BE";
         top: 0; }
@@ -538,7 +555,7 @@ footer {
     .tabular-info tr:first-child {
       border-top: none; }
   .tabular-info td {
-    color: #000; }
+    color: black; }
     .tabular-info td a {
       color: #2c6a5f; }
 

@@ -6,11 +6,11 @@
   }
 }
 header{
-  background: #c5bec6;
+  background: $bg-color-theme-light;
   padding: $base-spacing-unit-medium 0;
   .logo{
     a{
-      color: #000;
+      color: $text-color-dark;
       text-transform: uppercase;
       &:hover{
         text-decoration: none;
@@ -22,15 +22,15 @@ header{
     max-width: 390px;
   }
   .button{
-    color: #fff;
-    background: #2a6c62;
+    color: $text-color-lightest;
+    background: $button-bg-color;
     font-weight: bold;
     padding: 25px 35px;
     display: inline-block;
     border-radius: 5px;
     @include vendor(transition, all 0.8s);
     &:hover{
-      background: lighten(#2a6c62, 10);
+      background: lighten($button-bg-color, 10);
 
       text-decoration: none;
     }
@@ -49,14 +49,14 @@ section{
   }
 }
 section:nth-of-type(2n+1){
-  background-color: $base-color-theme-dark;
+  background-color: $bg-color-theme-dark;
   .section-heading{
-    color: #fff;
+    color: $heading-color-light;
   }
 }
 section:nth-of-type(2n){
   .section-heading{
-    color: #000;
+    color: $heading-color-dark;
   }
 }
 
@@ -64,7 +64,7 @@ footer{
   vertical-align: middle;
   background: $additional-color-theme-dark;
   padding: 15px;
-  color: #fff;
+  color: $text-color-lightest;
 }
 
 @include media-query(portable){

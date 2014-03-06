@@ -1,23 +1,49 @@
 .tabular-info{
   width: 100%;
-  background: #efeaf0;
+  background: $table-bg-color;
   thead{
-    background: #fff;
+    background: $bg-color-theme-lightest;
 
     font-weight: bold;
     th{
       text-align: left;
+
     }
+    #sorttable_sortrevind,
+    #sorttable_sortfwdind,
     .icon-sortable{
       position: relative;
       display: inline-block;
-      height: 10px;
       &:before, &:after{
         display: block;
         position: absolute;
         margin-left: 5px;
         vertical-align: middle;
       }
+    }
+
+    #sorttable_sortrevind,
+    #sorttable_sortfwdind{
+      height: 15px;
+       &:after{
+         top: 0;
+      }
+
+    }
+    #sorttable_sortrevind{
+      &:after{
+        content: "\25B4";
+      }
+    }
+    #sorttable_sortfwdind{
+      &:after{
+        content: "\25BE";
+      }
+    }
+
+
+    .icon-sortable{
+      height: 10px;
       &:before{
         content: "\25BE";
         top: 0;
@@ -39,10 +65,10 @@ th.sorttable_sorted .icon-sortable, th.sorttable_sorted_reverse .icon-sortable{
   }
 
   td{
-    color: #000;
+    color: $text-color-dark;
 
     a{
-      color: #2c6a5f;
+      color: $links-color-dark;
     }
   }
 }
