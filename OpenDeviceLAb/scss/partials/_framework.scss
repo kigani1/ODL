@@ -8,8 +8,13 @@ $random : random(5);
   }
 }
 header{
+  position: relative;
   background: $bg-color-theme-light;
-  padding: $base-spacing-unit-medium 0;
+  .content-wrapper{
+    padding-top: $base-spacing-unit-medium ;
+    padding-bottom: $base-spacing-unit-medium ;
+  }
+
   .logo{
     a{
       color: $text-color-dark;
@@ -22,6 +27,11 @@ header{
   h1{
     clear: both;
     max-width: 390px;
+  }
+  canvas{
+    position: absolute;
+    width: 100%;
+    height: 100%;
   }
   .button{
     color: $text-color-lightest;
@@ -74,6 +84,7 @@ footer{
   .content-wrapper{
     padding: 0 10px;
   }
+
 }
 
 

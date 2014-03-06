@@ -18,14 +18,21 @@
   -webkit-transform-origin:50% 50%;
 
 }
+.animate{
+  max-width: 100%;
+}
 .animate li{
   //position: absolute;
   @include vendor(transition, all 2s);
-  margin-right: 60px;
+  padding-right: 60px;
+  img{
+    max-width: 100%;
+  }
 }
 #animate-el-1{
   margin-top: 50px;
   margin-left: 70px;
+  max-width: 18%;
   opacity: 0;
   &.done{
     opacity: 1;
@@ -36,6 +43,7 @@
 }
 #animate-el-2{
   clear: right;
+  max-width: 22%;
   @include vendor(transform, translate(-50px, 0));
   &.done{
     @include vendor(transform, translate(0, 0));
@@ -44,6 +52,7 @@
 #animate-el-3{
   position: relative;
 margin-top: -230px;
+  max-width: 42%;
   @include vendor(transform, translate(0, -100px));
   &.done{
     @include vendor(transform, translate(0, 0));
@@ -56,12 +65,14 @@ margin-top: -230px;
 }
 #animate-el-4{
   margin-top: 20px;
+  max-width: 15%;
   @include vendor(transform, translate(50px, 0));
   &.done{
     @include vendor(transform, translate(0, 0));
   }
 }
 #animate-el-5{
+  max-width: 15%;
   @include vendor(transform, translate(100px, 0));
   &.done{
     @include vendor(transform, translate(0, 0));
