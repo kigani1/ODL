@@ -522,6 +522,7 @@ footer {
   max-width: 100%; }
 
 .animate li {
+  float: left;
   -webkit-transition: all 2s;
   -moz-transition: all 2s;
   -ms-transition: all 2s;
@@ -605,6 +606,24 @@ footer {
 
   #animate-el-3 {
     display: none; } }
+@media (max-width: 767px) {
+  .page-main-header .content-wrapper {
+    text-align: center; }
+  .page-main-header h1 {
+    width: 100%;
+    max-width: 100%;
+    text-align: center; }
+
+  .animate {
+    margin-left: 155px; }
+    .animate #animate-el-1, .animate #animate-el-5 {
+      display: none; }
+    .animate #animate-el-2 {
+      padding-right: 0;
+      max-width: 60%; }
+    .animate #animate-el-4 {
+      margin-left: -20px;
+      max-width: 40%; } }
 /*TABLE*/
 .tabular-info {
   width: 100%;
