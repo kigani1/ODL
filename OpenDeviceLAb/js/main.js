@@ -3,6 +3,7 @@ var openDeviceLab = {
         var self = this;
         this.mapInit();
         this.animate();
+        this.fitOnResize();
         $('.button').on('click', function (e) {
             self.scrollToPoint($('.google-map'));
             e.preventDefault();
@@ -42,12 +43,19 @@ var openDeviceLab = {
         }, 50);
 
 
+    },
+    fitOnResize: function(){
+
+//        window.onresize = function(event) {
+//           var height =$(".js-responsive-text").height();
+//            $('#animate-el-3').css({'margin-top':-height, 'transition': 'none'});
+//        };
     }
 }
 
 
 $(function () {
     openDeviceLab.init();
-
+    $(".js-responsive-text").fitText(1.2, {minFontSize: '16px', maxFontSize: '32px'});
 
 });

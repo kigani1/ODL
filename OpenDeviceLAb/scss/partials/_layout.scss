@@ -29,8 +29,8 @@
 }
 
 @include media-query(desk){
-.l-additional-gutter{
-  padding-left: 100px;
-  padding-right: 100px;
+.content-wrapper.l-additional-gutter{
+  padding-left: 110px;
+  padding-right: 110px;
 }
 }

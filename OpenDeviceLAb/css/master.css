@@ -447,13 +447,14 @@ a {
   .l-two-in-row .l-float-item:nth-child(2) {
     width: 40%; } }
 @media (min-width: 1025px) {
-  .l-additional-gutter {
-    padding-left: 100px;
-    padding-right: 100px; } }
+  .content-wrapper.l-additional-gutter {
+    padding-left: 110px;
+    padding-right: 110px; } }
 .content-wrapper {
   max-width: 1160px;
   margin: 0 auto;
-  position: relative; }
+  position: relative;
+  padding: 0 10px; }
   .content-wrapper h2 {
     margin: 20px 0; }
 
@@ -470,7 +471,9 @@ header {
       text-decoration: none; }
   header h1 {
     clear: both;
-    max-width: 390px; }
+    max-width: 38%;
+    margin-top: 60px;
+    padding-left: 45px; }
   header canvas {
     position: absolute;
     width: 100%;
@@ -846,13 +849,13 @@ footer {
   -ms-transition: all 2s;
   -o-transition: all 2s;
   transition: all 2s;
-  padding-right: 60px; }
+  padding-right: 5%; }
   .animate li img {
     max-width: 100%; }
 
 #animate-el-1 {
   margin-top: 50px;
-  margin-left: 70px;
+  margin-left: 6%;
   max-width: 18%;
   opacity: 0; }
   #animate-el-1.done {
@@ -866,7 +869,7 @@ footer {
 
 #animate-el-2 {
   clear: right;
-  max-width: 22%;
+  max-width: 25%;
   -webkit-transform: translate(-50px, 0);
   -moz-transform: translate(-50px, 0);
   -ms-transform: translate(-50px, 0);
@@ -881,8 +884,8 @@ footer {
 
 #animate-el-3 {
   position: relative;
-  margin-top: -230px;
-  max-width: 42%;
+  margin-top: -20%;
+  max-width: 45%;
   -webkit-transform: translate(0, -100px);
   -moz-transform: translate(0, -100px);
   -ms-transform: translate(0, -100px);

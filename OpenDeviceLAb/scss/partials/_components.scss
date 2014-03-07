@@ -24,14 +24,14 @@
 .animate li{
   //position: absolute;
   @include vendor(transition, all 2s);
-  padding-right: 60px;
+  padding-right: 5%;
   img{
     max-width: 100%;
   }
 }
 #animate-el-1{
   margin-top: 50px;
-  margin-left: 70px;
+  margin-left: 6%;
   max-width: 18%;
   opacity: 0;
   &.done{
@@ -43,7 +43,7 @@
 }
 #animate-el-2{
   clear: right;
-  max-width: 22%;
+  max-width: 25%;
   @include vendor(transform, translate(-50px, 0));
   &.done{
     @include vendor(transform, translate(0, 0));
@@ -51,8 +51,8 @@
 }
 #animate-el-3{
   position: relative;
-margin-top: -230px;
-  max-width: 42%;
+  margin-top: -20%;
+  max-width: 45%;
   @include vendor(transform, translate(0, -100px));
   &.done{
     @include vendor(transform, translate(0, 0));
@@ -114,8 +114,8 @@ margin-top: -230px;
     #sorttable_sortrevind,
     #sorttable_sortfwdind{
       height: 15px;
-       &:after{
-         top: 0;
+      &:after{
+        top: 0;
       }
 
     }
@@ -142,9 +142,9 @@ margin-top: -230px;
         bottom: 0;
       }
     }
-th.sorttable_sorted .icon-sortable, th.sorttable_sorted_reverse .icon-sortable{
-  display: none;
-}
+    th.sorttable_sorted .icon-sortable, th.sorttable_sorted_reverse .icon-sortable{
+      display: none;
+    }
   }
   tr{
     border-top: 1px solid #d9d4da;
@@ -195,23 +195,23 @@ th.sorttable_sorted .icon-sortable, th.sorttable_sorted_reverse .icon-sortable{
     tr{
       padding: 10px;
     }
-     td {
+    td {
       border: none;
       position: relative;
       padding-left: 50%;
       white-space: normal;
       text-align: left;
-       &:before{
-         position: absolute;
-         top: 3px;
-         left: 10px;
-         width: 45%;
-         padding-right: 10px;
-         white-space: nowrap;
-         text-align: left;
-         font-weight: 700;
-         content: attr(data-title);
-       }
+      &:before{
+        position: absolute;
+        top: 3px;
+        left: 10px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: 700;
+        content: attr(data-title);
+      }
     }
   }
 }
