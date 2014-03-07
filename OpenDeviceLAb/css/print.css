@@ -6,10 +6,10 @@
       text-decoration: underline;
       color: #000; }
 
-  header h1 {
+  .page-main-header h1 {
     max-width: 100%;
     color: #000; }
-  header .button {
+  .page-main-header .button {
     display: none; }
 
   .animate {

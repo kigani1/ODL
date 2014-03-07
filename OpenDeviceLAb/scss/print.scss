@@ -1,26 +1,26 @@
-@media print{
-body, section, footer{
-  background: #fff;
-  color: #000;
-  a{
-    text-decoration: underline;
+@media print {
+  body, section, footer {
+    background: #fff;
     color: #000;
+    a {
+      text-decoration: underline;
+      color: #000;
+    }
   }
-}
-  header{
-    h1{
+  .page-main-header {
+    h1 {
       max-width: 100%;
       color: #000;
     }
-.button{
-  display: none;
-}
+    .button {
+      display: none;
+    }
   }
-.animate{
-  display: none;
-}
-  section{
+  .animate {
+    display: none;
+  }
+  section {
     padding: 25px 0;
-  page-break-inside: avoid;
-}
+    page-break-inside: avoid;
+  }
 }

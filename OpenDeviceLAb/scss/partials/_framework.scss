@@ -7,7 +7,7 @@
     margin: $base-spacing-unit 0;
   }
 }
-header{
+.page-main-header{
   position: relative;
   background: $bg-color-theme-light;
   .content-wrapper{
@@ -26,9 +26,9 @@ header{
   }
   h1{
     clear: both;
-    max-width: 32%;
+    max-width: 38%;
     margin-top: $base-spacing-unit-big;
-   // padding-left: 45px;
+    padding-left: 45px;
 }
   canvas{
     position: absolute;
@@ -76,7 +76,6 @@ section:nth-of-type(2n){
 }
 
 footer{
-  vertical-align: middle;
   background: $additional-color-theme-dark;
   padding: 15px;
   color: $text-color-lightest;

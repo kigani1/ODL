@@ -150,9 +150,8 @@ function distancePointToLine(point, line) {
 // Get context
 $(document).ready(function() {
 
-    // Setup examples
-    $(".example").each(function() {
 
+    $(".js-canvas-animation").each(function() {
         // Get context
         var canvas = $(this).children("canvas")[0];
         canvas.width = window.innerWidth;
