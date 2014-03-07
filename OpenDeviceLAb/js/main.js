@@ -49,6 +49,6 @@ var openDeviceLab = {
 
 $(function () {
     openDeviceLab.init();
-    $(".js-responsive-text").fitText(1.2, {minFontSize: '16px', maxFontSize: '32px'});
+    $(".js-responsive-text").fitText(1.2, {minFontSize: '16px', maxFontSize: '33px'});
 
 });

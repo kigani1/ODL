@@ -44,7 +44,6 @@
       @include vendor(transform, rotate(360deg));
     }
   }
-
 }
 
 #animate-el-2{
@@ -82,11 +81,38 @@
   }
 }
 
+@media (max-width: 800px){
+  .animate{
+    margin-left: 85px;
+  }
+  .page-main-header{
+    h1{
+      font-size: 33px !important;
+      max-width: 435px;
+    }
+  }
+  #animate-el-1{
+    margin-top: 10%;
+    max-width: 30%;
+  } #animate-el-2{
+        max-width: 50%;
+      } #animate-el-4{
+                max-width: 25%;
+              } #animate-el-5{
+                                max-width: 25%;
+  }
+  #animate-el-3{
+    display: none;
+  }
+}
 
 /*TABLE*/
 .tabular-info{
   width: 100%;
   background: $table-bg-color;
+  th,td{
+    font-size: 16px;
+  }
   thead{
     background: $bg-color-theme-lightest;
     font-weight: bold;

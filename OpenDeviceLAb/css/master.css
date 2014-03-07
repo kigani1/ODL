@@ -68,26 +68,26 @@ strong {
 
 body {
   font-family: Arial, no-serif;
-  font-size: 16px;
-  color: #c6bfc6;
+  font-size: 18px;
+  color: #c5bec6;
   background: white;
   line-height: 1.4em; }
 
 /*----- Main headings---------*/
 h1 {
-  font-size: 32px;
+  font-size: 33px;
   color: white;
   font-weight: bold;
   line-height: 1.4em; }
 
 h2 {
-  font-size: 20px;
+  font-size: 22px;
   line-height: 1.4em;
   color: white;
   font-weight: bold; }
 
 .section-heading {
-  font-size: 24px;
+  font-size: 28px;
   line-height: 1.2em;
   font-weight: bold; }
 
@@ -95,7 +95,7 @@ h2 {
 /*----- Links ----------*/
 a {
   text-decoration: none;
-  color: #62c4b5; }
+  color: #63c3b5; }
   a:hover {
     text-decoration: underline; }
 
@@ -123,10 +123,10 @@ a {
     padding-left: 110px;
     padding-right: 110px; } }
 .content-wrapper {
-  max-width: 1160px;
+  max-width: 1170px;
   margin: 0 auto;
   position: relative;
-  padding: 0 10px; }
+  padding: 0 15px; }
   .content-wrapper h2 {
     margin: 20px 0; }
 
@@ -582,10 +582,35 @@ footer {
   -o-transform: translate(100px, 0);
   transform: translate(100px, 0); }
 
+@media (max-width: 800px) {
+  .animate {
+    margin-left: 85px; }
+
+  .page-main-header h1 {
+    font-size: 33px !important;
+    max-width: 435px; }
+
+  #animate-el-1 {
+    margin-top: 10%;
+    max-width: 30%; }
+
+  #animate-el-2 {
+    max-width: 50%; }
+
+  #animate-el-4 {
+    max-width: 25%; }
+
+  #animate-el-5 {
+    max-width: 25%; }
+
+  #animate-el-3 {
+    display: none; } }
 /*TABLE*/
 .tabular-info {
   width: 100%;
   background: #efeaf0; }
+  .tabular-info th, .tabular-info td {
+    font-size: 16px; }
   .tabular-info thead {
     background: white;
     font-weight: bold; }
