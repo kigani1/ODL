@@ -1,0 +1,14 @@
+.animate {
+  display: none; }
+
+noscript img {
+  max-width: 100%; }
+
+header h1 {
+  max-width: none; }
+
+.tabular-info thead .icon-sortable:before, .tabular-info thead .icon-sortable:after {
+  display: none; }
+
+#map-canvas {
+  display: none; }

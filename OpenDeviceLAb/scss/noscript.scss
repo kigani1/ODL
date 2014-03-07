@@ -1,0 +1,18 @@
+.animate {
+  display: none;
+}
+noscript img{
+  max-width: 100%;
+}
+header h1{
+  max-width: none;
+}
+.tabular-info thead .icon-sortable{
+  &:before, &:after{
+    display: none;
+  }
+
+}
+#map-canvas{
+  display: none;
+}

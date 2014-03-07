@@ -1,3 +1,7 @@
+%animation-finish{
+  @include vendor(transform, translate(0, 0));
+}
+
 /*ANIMATED ELEMENTS*/
 @include keyframes(spaceboots) {
   0% {@include vendor(transform, translate(2px, 1px) rotate(0deg)); }
@@ -13,7 +17,7 @@
   100% {@include vendor(transform, translate(1px, -2px) rotate(-1deg)); }
 }
 
-.shake:hover {
+.done.shake:hover {
   @include vendor(animation, spaceboots 0.8s linear infinite);
   -webkit-transform-origin:50% 50%;
 
@@ -30,23 +34,25 @@
   }
 }
 #animate-el-1{
-  margin-top: 50px;
+  margin-top: 5%;
   margin-left: 6%;
   max-width: 18%;
   opacity: 0;
   &.done{
     opacity: 1;
+    &:hover{
+      @include vendor(transform, rotate(360deg));
+    }
   }
-  &:hover{
-    @include vendor(transform, rotate(360deg));
-  }
+
 }
+
 #animate-el-2{
   clear: right;
   max-width: 25%;
   @include vendor(transform, translate(-50px, 0));
   &.done{
-    @include vendor(transform, translate(0, 0));
+    @extend %animation-finish;
   }
 }
 #animate-el-3{
@@ -55,36 +61,27 @@
   max-width: 45%;
   @include vendor(transform, translate(0, -100px));
   &.done{
-    @include vendor(transform, translate(0, 0));
-    &:hover{
-      .test{
-        opacity: 1;
-      }
-    }
+    @extend %animation-finish;
+
   }
 }
 #animate-el-4{
-  margin-top: 20px;
+  margin-top: 10%;
   max-width: 15%;
   @include vendor(transform, translate(50px, 0));
   &.done{
-    @include vendor(transform, translate(0, 0));
+    @extend %animation-finish;
   }
 }
 #animate-el-5{
+  margin-top: 7%;
   max-width: 15%;
   @include vendor(transform, translate(100px, 0));
   &.done{
-    @include vendor(transform, translate(0, 0));
+    @extend %animation-finish;
   }
 }
-.test{
-  opacity: 0;
-  top: 39px;
-  left: 37px;
-  position: absolute;
-  @include vendor(transition, all 0.5s);
-}
+
 
 /*TABLE*/
 .tabular-info{
@@ -92,7 +89,6 @@
   background: $table-bg-color;
   thead{
     background: $bg-color-theme-lightest;
-
     font-weight: bold;
     th{
       text-align: left;
@@ -172,6 +168,9 @@
 @include media-query(lap-and-up){
   /*TABLE*/
   .tabular-info{
+    th{
+      cursor: pointer;
+    }
     th, td{
       padding: 20px;
     }

@@ -6,7 +6,8 @@
     <meta content="Making Waves Open Device lab is a project to help the local web developers to be able to test their work on the mobile devices"
           name="description">
     <link rel="stylesheet" href="css/master.css" type="text/css">
-
+    <noscript><link rel="stylesheet" href="css/noscript.css" type="text/css"></noscript>
+    <link rel="stylesheet" href="css/print.css" type="text/css">
     <script src="js/jquery.2.1.0.min.js" type="text/javascript"></script>
     <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDlY9QSNc0dlyEASbZBo1EmG3E1rncBSYg&sensor=false"></script>
     <script src="js/sortable.js" type="text/javascript"></script>
@@ -27,15 +28,11 @@
      <ul class="l-float-list cf animate">
          <li id="animate-el-1"><img src="img/cup.png"></li>
          <li id="animate-el-2" class="shake"><img src="img/phone3.png"></li>
-         <li id="animate-el-3">
-             <img src="img/device4.png">
-             <!--<img class="test" src="img/device-overlay.png">-->
-         </li>
+         <li id="animate-el-3"><img src="img/device4.png"></li>
          <li id="animate-el-4" class="shake"><img src="img/phone2.png"></li>
          <li id="animate-el-5" class="shake"><img src="img/phone1.png"></li>
-
      </ul>
-
+    <noscript><img src="img/devices.png"></noscript>
     </div>
 
 </header>
@@ -115,7 +112,7 @@
     <div class="content-wrapper l-additional-gutter">
         <h2 class="section-heading">Visit the lab</h2>
 
-        <div class="google-map" id="map-canvas">Map</div>
+        <div class="google-map" id="map-canvas"></div>
 
         <div class="l-two-in-row cf">
             <p class="l-float-item">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras accumsan aliquam

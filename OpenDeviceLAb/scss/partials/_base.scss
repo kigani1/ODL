@@ -1,5 +1,9 @@
 html, body {
   -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+strong {
+  font-weight: bold;
 }
 body{
   font-family: Arial, no-serif;
@@ -10,13 +14,13 @@ body{
 }
 
 /*----- Main headings---------*/
-h1, .page-main-heading {
+h1 {
   font-size: 32px;
   color: $heading-color-light;
   font-weight: bold;
   line-height: 1.4em;
 }
-h2, .secondary-heading, {
+h2{
   font-size: 20px;
   line-height: 1.4em;
   color: $heading-color-light;

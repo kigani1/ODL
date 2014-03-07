@@ -1,0 +1,20 @@
+@media print {
+  body, section, footer {
+    background: #fff;
+    color: #000; }
+    body a, section a, footer a {
+      text-decoration: underline;
+      color: #000; }
+
+  header h1 {
+    max-width: 100%;
+    color: #000; }
+  header .button {
+    display: none; }
+
+  .animate {
+    display: none; }
+
+  section {
+    padding: 25px 0;
+    page-break-inside: avoid; } }
