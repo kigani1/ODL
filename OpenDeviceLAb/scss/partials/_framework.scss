@@ -16,19 +16,27 @@
   }
 
   .logo{
-    a{
+    text-align: left;
+    max-width: 250px;
+    margin: 0 auto;
+
+      background: url("../img/ODL-logo.svg") no-repeat;
+      background-size: 50px 50px;
+      padding-left: 60px;
       color: $text-color-dark;
       text-transform: uppercase;
+
       &:hover{
         text-decoration: none;
       }
-    }
+      strong{
+        font-family: 'Arial Black', no-serif;
+      }
+
   }
-  h1{
-    clear: both;
-    max-width: 38%;
+  h2{
     margin-top: $base-spacing-unit-big;
-    padding-left: 45px;
+
 }
   canvas{
     position: absolute;
@@ -81,11 +89,44 @@ footer{
   color: $text-color-lightest;
 }
 
+/*---------------------------- Desktop & Tablet version ---------------------*/
+@include media-query(lap-and-up){
+  .page-main-header{
+   .page-main-heading{
+      clear: both;
+      max-width: 35%;
+      padding-left: 40px;
+    }
+    .content-wrapper{
+      position: relative;
+
+    }
+    .button{
+      position: absolute;
+      right: 10px;
+      top: 30px;
+    }
+  }
+}
+/*---------------------------- Tablet & Mobile version ---------------------*/
 @include media-query(portable){
   .content-wrapper{
     padding: 0 10px;
   }
 
 }
-
-
+/*---------------------------- Mobile version ---------------------*/
+@include media-query(palm){
+  .page-main-header{
+    .content-wrapper{
+      text-align: center;
+    }
+    .page-main-heading{
+      text-align: center;
+      font-size: 28px;
+    }
+    .button{
+      margin: 35px 0 45px 0;
+    }
+  }
+}

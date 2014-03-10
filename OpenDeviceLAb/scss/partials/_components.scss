@@ -1,37 +1,49 @@
-%animation-finish{
-  @include vendor(transform, translate(0, 0));
-}
+
 
 /*ANIMATED ELEMENTS*/
-@include keyframes(spaceboots) {
-  0% {@include vendor(transform, translate(2px, 1px) rotate(0deg)); }
-  10% {@include vendor(transform, translate(-1px, -2px) rotate(-1deg)); }
-  20% { @include vendor(transform, translate(-3px, 0px) rotate(1deg)); }
-  30% {@include vendor( transform, translate(0px, 2px) rotate(0deg)); }
-  40% {@include vendor( transform, translate(1px, -1px) rotate(1deg)); }
-  50% {@include vendor( transform, translate(-1px, 2px) rotate(-1deg)); }
-  60% {@include vendor( transform, translate(-3px, 1px) rotate(0deg)); }
-  70% {@include vendor( transform, translate(2px, 1px) rotate(-1deg)); }
-  80% {@include vendor( transform, translate(-1px, -1px) rotate(1deg)); }
-  90% {@include vendor( transform, translate(2px, 2px) rotate(0deg)); }
-  100% {@include vendor(transform, translate(1px, -2px) rotate(-1deg)); }
-}
 
-.done.shake:hover {
-  @include vendor(animation, spaceboots 0.8s linear infinite);
-  -webkit-transform-origin:50% 50%;
-
-}
 .animate{
   max-width: 100%;
-}
-.animate li{
- float: left;
-  @include vendor(transition, all 2s);
-  padding-right: 5%;
   img{
     max-width: 100%;
   }
+}
+
+@include media-query(lap-and-up){
+  @include keyframes(spaceboots) {
+    0% {@include vendor(transform, translate(2px, 1px) rotate(0deg)); }
+    10% {@include vendor(transform, translate(-1px, -2px) rotate(-1deg)); }
+    20% { @include vendor(transform, translate(-3px, 0px) rotate(1deg)); }
+    30% {@include vendor( transform, translate(0px, 2px) rotate(0deg)); }
+    40% {@include vendor( transform, translate(1px, -1px) rotate(1deg)); }
+    50% {@include vendor( transform, translate(-1px, 2px) rotate(-1deg)); }
+    60% {@include vendor( transform, translate(-3px, 1px) rotate(0deg)); }
+    70% {@include vendor( transform, translate(2px, 1px) rotate(-1deg)); }
+    80% {@include vendor( transform, translate(-1px, -1px) rotate(1deg)); }
+    90% {@include vendor( transform, translate(2px, 2px) rotate(0deg)); }
+    100% {@include vendor(transform, translate(1px, -2px) rotate(-1deg)); }
+  }
+
+  .done.shake:hover {
+    @include vendor(animation, spaceboots 0.8s linear infinite);
+    -webkit-transform-origin:50% 50%;
+
+  }
+  %animation-finish{
+    @include vendor(transform, translate(0, 0));
+  }
+.animate{
+  li{
+ float: left;
+ // @include vendor(transition, all 2s);
+    -webkit-transition:  -webkit-transform 2s, opacity 2s;
+    -moz-transition: -moz-transform 2s, opacity 2s;
+    -ms-transition:  -ms-transform 2s, opacity 2s;
+    -o-transition:  -o-transform 2s, opacity 2s;
+    transition:  transform 2s, opacity 2s;
+  padding-right: 5%;
+
+}
 }
 #animate-el-1{
   margin-top: 5%;
@@ -80,22 +92,31 @@
     @extend %animation-finish;
   }
 }
+}
 
-@media (max-width: 800px){
+@include media-query(portrait){
+  .page-main-header{
+    h2{
+      margin-top: 125px;
+    }
+  }
   .animate{
-    margin-left: 85px;
+    max-width: 75%;
+    margin: 0 auto;
   }
   .page-main-header{
-    h1{
-      font-size: 33px !important;
-      max-width: 435px;
+    .page-main-heading{
+      font-size: 33px;
+      max-width: 55%;
     }
   }
   #animate-el-1{
-    margin-top: 10%;
+    margin-top: 20%;
     max-width: 30%;
   } #animate-el-2{
+  padding-right: 10%;
         max-width: 50%;
+  margin-top: -10%;
       } #animate-el-4{
                 max-width: 25%;
               } #animate-el-5{
@@ -106,28 +127,24 @@
   }
 }
 @include media-query(palm){
-  .page-main-header{
-    .content-wrapper{
-      text-align: center;
-    }
-    h1{
-    width: 100%;
-    max-width: 100%;
-      text-align: center;
-    }
-  }
+
   .animate{
-    margin-left: 155px;
-    #animate-el-1, #animate-el-5{
+    margin-bottom:  65px ;
+    li{
+      vertical-align: middle;
+      display: inline-block;
+      float: none;
+    }
+    #animate-el-1, #animate-el-5, #animate-el-3{
       display: none;
     }
     #animate-el-2{
       padding-right: 0;
-      max-width: 60%;
+      max-width: 70%;
     }
     #animate-el-4{
       margin-left: -20px;
-      max-width: 40%;
+      max-width: 30%;
     }
   }
 }
@@ -161,6 +178,7 @@
     #sorttable_sortrevind,
     #sorttable_sortfwdind{
       height: 15px;
+      vertical-align: top;
       &:after{
         top: 0;
       }
@@ -263,5 +281,9 @@
         content: attr(data-title);
       }
     }
+  }
+  /*GOOGLE MAP*/
+  .google-map{
+    height: 300px;
   }
 }

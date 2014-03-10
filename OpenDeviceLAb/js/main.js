@@ -4,7 +4,7 @@ var openDeviceLab = {
         this.mapInit();
         this.animate();
         $('.button').on('click', function (e) {
-            self.scrollToPoint($('.google-map'));
+            self.scrollToPoint($('.google-map').prev('.section-heading'));
             e.preventDefault();
         });
     },
@@ -35,8 +35,15 @@ var openDeviceLab = {
         $('.animate').find('li').eq(0).addClass('done')
         setInterval(function () {
                 var el = $('.done').last().next();
-                el.css('transition-duration', randomValue(numbers)+ 's');
-                el.css('transition-timing-function', randomValue(options));
+            el.css({
+             '-webkit-transition-property':  '-webkit-transform 2s, opacity 2s',
+            '-moz-transition-property': '-moz-transform 2s, opacity 2s',
+            '-ms-transition-property':  '-ms-transform 2s, opacity 2s',
+            '-o-transition-property':  '-o-transform 2s, opacity 2s',
+            'transition-property':  'transform 2s, opacity 2s',
+            'transition-duration': randomValue(numbers)+ 's',
+            'transition-timing-function': randomValue(options)
+            });
                 el.addClass('done');
 
         }, 50);
