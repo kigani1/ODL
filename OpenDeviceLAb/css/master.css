@@ -748,15 +748,12 @@ footer {
     padding: 10px; }
   .tabular-info td {
     border: none;
-    position: relative;
-    padding-left: 50%;
     white-space: normal;
     text-align: left; }
     .tabular-info td:before {
-      position: absolute;
-      top: 3px;
-      left: 10px;
-      padding-right: 10px;
+      width: 50%;
+      display: inline-block;
+      padding-right: 15px;
       white-space: nowrap;
       text-align: left;
       font-weight: bold;
