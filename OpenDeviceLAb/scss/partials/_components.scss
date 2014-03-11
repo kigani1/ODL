@@ -1,173 +1,191 @@
-
-
 /*ANIMATED ELEMENTS*/
 
-.animate{
+.animate {
   max-width: 100%;
-  img{
+  img {
     max-width: 100%;
   }
 }
 
-@include media-query(lap-and-up){
+/*-------------------- Tablet & Desktop version --------------------*/
+@include media-query(lap-and-up) {
   @include keyframes(spaceboots) {
-    0% {@include vendor(transform, translate(2px, 1px) rotate(0deg)); }
-    10% {@include vendor(transform, translate(-1px, -2px) rotate(-1deg)); }
-    20% { @include vendor(transform, translate(-3px, 0px) rotate(1deg)); }
-    30% {@include vendor( transform, translate(0px, 2px) rotate(0deg)); }
-    40% {@include vendor( transform, translate(1px, -1px) rotate(1deg)); }
-    50% {@include vendor( transform, translate(-1px, 2px) rotate(-1deg)); }
-    60% {@include vendor( transform, translate(-3px, 1px) rotate(0deg)); }
-    70% {@include vendor( transform, translate(2px, 1px) rotate(-1deg)); }
-    80% {@include vendor( transform, translate(-1px, -1px) rotate(1deg)); }
-    90% {@include vendor( transform, translate(2px, 2px) rotate(0deg)); }
-    100% {@include vendor(transform, translate(1px, -2px) rotate(-1deg)); }
+    0% {
+      @include vendor(transform, translate(2px, 1px) rotate(0deg));
+    }
+    10% {
+      @include vendor(transform, translate(-1px, -2px) rotate(-1deg));
+    }
+    20% {
+      @include vendor(transform, translate(-3px, 0px) rotate(1deg));
+    }
+    30% {
+      @include vendor(transform, translate(0px, 2px) rotate(0deg));
+    }
+    40% {
+      @include vendor(transform, translate(1px, -1px) rotate(1deg));
+    }
+    50% {
+      @include vendor(transform, translate(-1px, 2px) rotate(-1deg));
+    }
+    60% {
+      @include vendor(transform, translate(-3px, 1px) rotate(0deg));
+    }
+    70% {
+      @include vendor(transform, translate(2px, 1px) rotate(-1deg));
+    }
+    80% {
+      @include vendor(transform, translate(-1px, -1px) rotate(1deg));
+    }
+    90% {
+      @include vendor(transform, translate(2px, 2px) rotate(0deg));
+    }
+    100% {
+      @include vendor(transform, translate(1px, -2px) rotate(-1deg));
+    }
   }
-
-  .done.shake:hover {
+  .hover-on .done.shake:hover {
     @include vendor(animation, spaceboots 0.8s linear infinite);
-    -webkit-transform-origin:50% 50%;
-
+    -webkit-transform-origin: 50% 50%;
   }
-  %animation-finish{
-    @include vendor(transform, translate(0, 0));
-  }
-.animate{
-  li{
- float: left;
- // @include vendor(transition, all 2s);
-    -webkit-transition:  -webkit-transform 2s, opacity 2s;
-    -moz-transition: -moz-transform 2s, opacity 2s;
-    -ms-transition:  -ms-transform 2s, opacity 2s;
-    -o-transition:  -o-transform 2s, opacity 2s;
-    transition:  transform 2s, opacity 2s;
-  padding-right: 5%;
-
-}
-}
-#animate-el-1{
-  margin-top: 5%;
-  margin-left: 6%;
-  max-width: 18%;
-  opacity: 0;
-  &.done{
-    opacity: 1;
-    &:hover{
+  .hover-on #animate-el-1 {
+    &.done:hover {
       @include vendor(transform, rotate(360deg));
     }
   }
-}
+  %animation-finish {
+    @include vendor(transform, translate(0, 0));
+  }
+  .animate {
+    li {
+      float: left;
+      -webkit-transition: -webkit-transform 2s, opacity 2s;
+      -moz-transition: -moz-transform 2s, opacity 2s;
+      -ms-transition: -ms-transform 2s, opacity 2s;
+      -o-transition: -o-transform 2s, opacity 2s;
+      transition: transform 2s, opacity 2s;
+      padding-right: 5%;
 
-#animate-el-2{
-  clear: right;
-  max-width: 25%;
-  @include vendor(transform, translate(-50px, 0));
-  &.done{
-    @extend %animation-finish;
-  }
-}
-#animate-el-3{
-  position: relative;
-  margin-top: -20%;
-  max-width: 45%;
-  @include vendor(transform, translate(0, -100px));
-  &.done{
-    @extend %animation-finish;
-
-  }
-}
-#animate-el-4{
-  margin-top: 10%;
-  max-width: 15%;
-  @include vendor(transform, translate(50px, 0));
-  &.done{
-    @extend %animation-finish;
-  }
-}
-#animate-el-5{
-  margin-top: 7%;
-  max-width: 15%;
-  @include vendor(transform, translate(100px, 0));
-  &.done{
-    @extend %animation-finish;
-  }
-}
-}
-
-@include media-query(portrait){
-  .page-main-header{
-    h2{
-      margin-top: 125px;
     }
   }
-  .animate{
+  #animate-el-1 {
+    margin-top: 5%;
+    margin-left: 6%;
+    max-width: 18%;
+    opacity: 0;
+    &.done {
+      opacity: 1;
+    }
+  }
+
+  #animate-el-2 {
+    clear: right;
+    max-width: 25%;
+    @include vendor(transform, translate(-50px, 0));
+    &.done {
+      @extend %animation-finish;
+    }
+  }
+  #animate-el-3 {
+    position: relative;
+    margin-top: -20%;
+    max-width: 45%;
+    @include vendor(transform, translate(0, -100px));
+    &.done {
+      @extend %animation-finish;
+
+    }
+  }
+  #animate-el-4 {
+    margin-top: 10%;
+    max-width: 15%;
+    @include vendor(transform, translate(50px, 0));
+    &.done {
+      @extend %animation-finish;
+    }
+  }
+  #animate-el-5 {
+    margin-top: 7%;
+    max-width: 15%;
+    @include vendor(transform, translate(100px, 0));
+    &.done {
+      @extend %animation-finish;
+    }
+  }
+}
+
+/*--------------- Tablet version - portrait -----------*/
+@include media-query(portrait) {
+
+  .animate {
     max-width: 75%;
     margin: 0 auto;
   }
-  .page-main-header{
-    .page-main-heading{
-      font-size: 33px;
-      max-width: 55%;
-    }
-  }
-  #animate-el-1{
+
+  #animate-el-1 {
     margin-top: 20%;
     max-width: 30%;
-  } #animate-el-2{
-  padding-right: 10%;
-        max-width: 50%;
-  margin-top: -10%;
-      } #animate-el-4{
-                max-width: 25%;
-              } #animate-el-5{
-                                max-width: 25%;
   }
-  #animate-el-3{
+  #animate-el-2 {
+    padding-right: 10%;
+    max-width: 50%;
+    margin-top: -10%;
+  }
+  #animate-el-4 {
+    max-width: 25%;
+  }
+  #animate-el-5 {
+    max-width: 25%;
+  }
+  #animate-el-3 {
     display: none;
   }
 }
-@include media-query(palm){
 
-  .animate{
-    margin-bottom:  65px ;
-    li{
+/*--------------- Mobile version -----------*/
+@include media-query(palm) {
+
+  .animate {
+    margin-bottom: 65px;
+    li {
       vertical-align: middle;
       display: inline-block;
       float: none;
     }
-    #animate-el-1, #animate-el-5, #animate-el-3{
+    #animate-el-1, #animate-el-5, #animate-el-3 {
       display: none;
     }
-    #animate-el-2{
+    #animate-el-2 {
       padding-right: 0;
       max-width: 70%;
     }
-    #animate-el-4{
+    #animate-el-4 {
       margin-left: -20px;
       max-width: 30%;
     }
   }
 }
+
 /*TABLE*/
-.tabular-info{
+.tabular-info {
   width: 100%;
   background: $table-bg-color;
-  th,td{
+  th, td {
     font-size: 16px;
   }
-  thead{
+  thead {
     background: $bg-color-theme-lightest;
     font-weight: bold;
-    th{
+    th {
       text-align: left;
 
     }
     #sorttable_sortrevind,
     #sorttable_sortfwdind,
-    .icon-sortable{
+    .icon-sortable {
       position: relative;
       display: inline-block;
-      &:before, &:after{
+      &:before, &:after {
         display: block;
         position: absolute;
         margin-left: 5px;
@@ -176,82 +194,83 @@
     }
 
     #sorttable_sortrevind,
-    #sorttable_sortfwdind{
+    #sorttable_sortfwdind {
       height: 15px;
       vertical-align: top;
-      &:after{
+      &:after {
         top: 0;
       }
 
     }
-    #sorttable_sortrevind{
-      &:after{
+    #sorttable_sortrevind {
+      &:after {
         content: "\25B4";
       }
     }
-    #sorttable_sortfwdind{
-      &:after{
+    #sorttable_sortfwdind {
+      &:after {
         content: "\25BE";
       }
     }
 
-
-    .icon-sortable{
+    .icon-sortable {
       height: 10px;
-      &:before{
+      &:before {
         content: "\25BE";
         top: 0;
       }
-      &:after{
+      &:after {
         content: "\25B4";
         bottom: 0;
       }
     }
-    th.sorttable_sorted .icon-sortable, th.sorttable_sorted_reverse .icon-sortable{
+    th.sorttable_sorted .icon-sortable, th.sorttable_sorted_reverse .icon-sortable {
       display: none;
     }
   }
-  tr{
+  tr {
     border-top: 1px solid #d9d4da;
-    &:first-child{
+    &:first-child {
       border-top: none;
     }
   }
 
-  td{
+  td {
     color: $text-color-dark;
 
-    a{
+    a {
       color: $links-color-dark;
     }
   }
 }
+
 /*GOOGLE MAP*/
-.google-map{
+.google-map {
   width: 100%;
   height: 435px;
   border: 5px solid #292e34;
 }
 
 /*--------------------- desktop version ----------------*/
-@include media-query(lap-and-up){
+@include media-query(lap-and-up) {
   /*TABLE*/
-  .tabular-info{
-    th{
+  .tabular-info {
+    th {
       cursor: pointer;
     }
-    th, td{
+    th, td {
       padding: 20px;
     }
-    td:first-child{
+    td:first-child {
       font-weight: bold;
     }
   }
 }
+
 /*--------------------- mobile version ----------------*/
-@include media-query(palm){
+@include media-query(palm) {
   /*TABLE*/
-  .tabular-info{
+  .tabular-info {
     max-width: 100%;
   }
   thead tr {
@@ -259,11 +278,11 @@
     top: -9999px;
     left: -9999px;
   }
-  .tabular-info table, .tabular-info thead, .tabular-infoe tbody, .tabular-info th, .tabular-info td, .tabular-info tr{
+  .tabular-info table, .tabular-info thead, .tabular-info tbody, .tabular-info th, .tabular-info td, .tabular-info tr {
     display: block;
   }
-  .tabular-info{
-    tr{
+  .tabular-info {
+    tr {
       padding: 10px;
     }
     td {
@@ -271,7 +290,7 @@
       white-space: normal;
       text-align: left;
 
-      &:before{
+      &:before {
         width: 50%;
         display: inline-block;
         padding-right: 15px;
@@ -283,7 +302,7 @@
     }
   }
   /*GOOGLE MAP*/
-  .google-map{
+  .google-map {
     height: 300px;
   }
 }

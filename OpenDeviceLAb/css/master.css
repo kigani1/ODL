@@ -1,10 +1,4 @@
 /*Modules*/
-@media (min-width: 641px) {
-  /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ }
-@media (min-width: 961px) {
-  /* tablet, landscape iPad, lo-res laptops ands desktops */ }
-@media (min-width: 1025px) {
-  /* big landscape tablets, laptops, and desktops */ }
 /*SPACING*/
 /*COLORS*/
 /*Partials*/
@@ -145,6 +139,7 @@ a {
   .page-main-header .logo {
     text-align: left;
     max-width: 250px;
+    min-height: 52px;
     margin: 0 auto;
     background: url("../img/ODL-logo.svg") no-repeat;
     background-size: 50px 50px;
@@ -154,7 +149,7 @@ a {
     .page-main-header .logo:hover {
       text-decoration: none; }
     .page-main-header .logo strong {
-      font-family: 'Arial Black', no-serif; }
+      font-family: 'Arial Black', Arial, no-serif; }
   .page-main-header h2 {
     margin-top: 60px; }
   .page-main-header canvas {
@@ -210,6 +205,12 @@ footer {
     position: absolute;
     right: 10px;
     top: 30px; } }
+/*------------------------- Tablet portrait ----------------------*/
+@media (min-width: 768px) and (max-width: 960px) {
+  .page-main-header .page-main-heading {
+    margin-top: 125px;
+    font-size: 33px;
+    max-width: 58%; } }
 /*---------------------------- Tablet & Mobile version ---------------------*/
 @media (max-width: 1024px) {
   .content-wrapper {
@@ -229,6 +230,7 @@ footer {
   .animate img {
     max-width: 100%; }
 
+/*-------------------- Tablet & Desktop version --------------------*/
 @media (min-width: 768px) {
   @-webkit-keyframes spaceboots {
     0% {
@@ -542,13 +544,20 @@ footer {
       -o-transform: translate(1px, -2px) rotate(-1deg);
       transform: translate(1px, -2px) rotate(-1deg); } }
 
-  .done.shake:hover {
+  .hover-on .done.shake:hover {
     -webkit-animation: spaceboots 0.8s linear infinite;
     -moz-animation: spaceboots 0.8s linear infinite;
     -ms-animation: spaceboots 0.8s linear infinite;
     -o-animation: spaceboots 0.8s linear infinite;
     animation: spaceboots 0.8s linear infinite;
     -webkit-transform-origin: 50% 50%; }
+
+  .hover-on #animate-el-1.done:hover {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg); }
 
   #animate-el-2.done, #animate-el-3.done, #animate-el-4.done, #animate-el-5.done {
     -webkit-transform: translate(0, 0);
@@ -573,12 +582,6 @@ footer {
     opacity: 0; }
     #animate-el-1.done {
       opacity: 1; }
-      #animate-el-1.done:hover {
-        -webkit-transform: rotate(360deg);
-        -moz-transform: rotate(360deg);
-        -ms-transform: rotate(360deg);
-        -o-transform: rotate(360deg);
-        transform: rotate(360deg); }
 
   #animate-el-2 {
     clear: right;
@@ -616,17 +619,11 @@ footer {
     -ms-transform: translate(100px, 0);
     -o-transform: translate(100px, 0);
     transform: translate(100px, 0); } }
+/*--------------- Tablet version - portrait -----------*/
 @media (min-width: 768px) and (max-width: 960px) {
-  .page-main-header h2 {
-    margin-top: 125px; }
-
   .animate {
     max-width: 75%;
     margin: 0 auto; }
-
-  .page-main-header .page-main-heading {
-    font-size: 33px;
-    max-width: 55%; }
 
   #animate-el-1 {
     margin-top: 20%;
@@ -645,6 +642,7 @@ footer {
 
   #animate-el-3 {
     display: none; } }
+/*--------------- Mobile version -----------*/
 @media (max-width: 767px) {
   .animate {
     margin-bottom: 65px; }
@@ -741,7 +739,7 @@ footer {
     top: -9999px;
     left: -9999px; }
 
-  .tabular-info table, .tabular-info thead, .tabular-infoe tbody, .tabular-info th, .tabular-info td, .tabular-info tr {
+  .tabular-info table, .tabular-info thead, .tabular-info tbody, .tabular-info th, .tabular-info td, .tabular-info tr {
     display: block; }
 
   .tabular-info tr {
@@ -762,3 +760,26 @@ footer {
   /*GOOGLE MAP*/
   .google-map {
     height: 300px; } }
+/*Media*/
+@media print {
+  body, section, footer {
+    background: #fff;
+    color: #000; }
+
+  body a, section a, footer a {
+    text-decoration: underline;
+    color: #000; }
+
+  .page-main-header h2 {
+    max-width: 100%;
+    color: #000; }
+
+  .page-main-header .button {
+    display: none; }
+
+  .animate {
+    display: none; }
+
+  section {
+    padding: 25px 0;
+    page-break-inside: avoid; } }

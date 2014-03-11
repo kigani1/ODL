@@ -20,7 +20,7 @@
 
 $palm-end: $lap-start - 1px;
 $lap-end:  $desk-start - 1px;
-$portrait-end: $landscape-start -1px;
+$portrait-end: $landscape-start - 1px;
 
 @mixin media-query($media-query){
 
@@ -32,7 +32,7 @@ $portrait-end: $landscape-start -1px;
     @media (min-width:$lap-start) and (max-width:$lap-end) { @content; }
   }
   @if $media-query == portrait{
-    @media (min-width:$lap-start) and (max-width: 960px) { @content; }
+    @media (min-width:$lap-start) and (max-width: $portrait-end) { @content; }
   }
   @if $media-query == landscape{
     @media (min-width: $landscape-start) and (max-width:$lap-end) { @content; }

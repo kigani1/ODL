@@ -3,13 +3,17 @@ var openDeviceLab = {
         var self = this;
         this.mapInit();
         this.animate();
+        var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
         $('a').on('click', function (e) {
             var goTo = $(this).attr('href');
-            if(goTo == '#map-section'){
-            self.scrollToPoint($('.google-map').prev('.section-heading'));
-            e.preventDefault();
+            if (goTo == '#map-section') {
+                self.scrollToPoint($('.google-map').prev('.section-heading'));
+                e.preventDefault();
             }
         });
+        if(!isMobile){
+            $('body').addClass('hover-on');
+        }
     },
     scrollToPoint: function (scrollTo) {
         $('html, body').stop().animate({
@@ -30,24 +34,24 @@ var openDeviceLab = {
         marker.setMap(map);
     },
     animate: function () {
-        var numbers =[0.8, 1, 2],
-            options = ['ease', 'linear',  'ease-out', 'ease-in-out'];
-        var randomValue = function(array){
-           return array[Math.floor(Math.random() * array.length)]
+        var numbers = [0.8, 1, 2],
+            options = ['ease', 'linear', 'ease-out', 'ease-in-out'];
+        var randomValue = function (array) {
+            return array[Math.floor(Math.random() * array.length)]
         }
         $('.animate').find('li').eq(0).addClass('done')
         setInterval(function () {
-                var el = $('.done').last().next();
+            var el = $('.done').last().next();
             el.css({
-             '-webkit-transition-property':  '-webkit-transform 2s, opacity 2s',
-            '-moz-transition-property': '-moz-transform 2s, opacity 2s',
-            '-ms-transition-property':  '-ms-transform 2s, opacity 2s',
-            '-o-transition-property':  '-o-transform 2s, opacity 2s',
-            'transition-property':  'transform 2s, opacity 2s',
-            'transition-duration': randomValue(numbers)+ 's',
-            'transition-timing-function': randomValue(options)
+                '-webkit-transition-property': '-webkit-transform 2s, opacity 2s',
+                '-moz-transition-property': '-moz-transform 2s, opacity 2s',
+                '-ms-transition-property': '-ms-transform 2s, opacity 2s',
+                '-o-transition-property': '-o-transform 2s, opacity 2s',
+                'transition-property': 'transform 2s, opacity 2s',
+                'transition-duration': randomValue(numbers) + 's',
+                'transition-timing-function': randomValue(options)
             });
-                el.addClass('done');
+            el.addClass('done');
 
         }, 50);
 
