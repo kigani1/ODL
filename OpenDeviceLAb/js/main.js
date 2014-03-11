@@ -3,9 +3,12 @@ var openDeviceLab = {
         var self = this;
         this.mapInit();
         this.animate();
-        $('.button').on('click', function (e) {
+        $('a').on('click', function (e) {
+            var goTo = $(this).attr('href');
+            if(goTo == '#map-section'){
             self.scrollToPoint($('.google-map').prev('.section-heading'));
             e.preventDefault();
+            }
         });
     },
     scrollToPoint: function (scrollTo) {

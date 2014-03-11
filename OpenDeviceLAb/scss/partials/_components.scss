@@ -251,6 +251,9 @@
 /*--------------------- mobile version ----------------*/
 @include media-query(palm){
   /*TABLE*/
+  .tabular-info{
+    max-width: 100%;
+  }
   thead tr {
     position: absolute;
     top: -9999px;
@@ -269,15 +272,16 @@
       padding-left: 50%;
       white-space: normal;
       text-align: left;
+
       &:before{
         position: absolute;
         top: 3px;
         left: 10px;
-        width: 45%;
+//        width: 45%;
         padding-right: 10px;
         white-space: nowrap;
         text-align: left;
-        font-weight: 700;
+        font-weight: bold;
         content: attr(data-title);
       }
     }
