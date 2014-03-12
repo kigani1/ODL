@@ -1,0 +1,129 @@
+/*TABLE*/
+.tabular-info {
+  width: 100%;
+  background: $table-bg-color;
+  th, td {
+    font-size: 16px;
+  }
+  thead {
+    background: $bg-color-theme-lightest;
+    font-weight: bold;
+    th {
+      text-align: left;
+
+    }
+    #sorttable_sortrevind,
+    #sorttable_sortfwdind,
+    .icon-sortable {
+      position: relative;
+      display: inline-block;
+      &:before, &:after {
+        display: block;
+        position: absolute;
+        margin-left: 5px;
+        vertical-align: middle;
+      }
+    }
+
+    #sorttable_sortrevind,
+    #sorttable_sortfwdind {
+      height: 15px;
+      vertical-align: top;
+      &:after {
+        top: 0;
+      }
+
+    }
+    #sorttable_sortrevind {
+      &:after {
+        content: "\25B4";
+      }
+    }
+    #sorttable_sortfwdind {
+      &:after {
+        content: "\25BE";
+      }
+    }
+
+    .icon-sortable {
+      height: 10px;
+      &:before {
+        content: "\25BE";
+        top: 0;
+      }
+      &:after {
+        content: "\25B4";
+        bottom: 0;
+      }
+    }
+    th.sorttable_sorted .icon-sortable, th.sorttable_sorted_reverse .icon-sortable {
+      display: none;
+    }
+  }
+  tr {
+    border-top: 1px solid #d9d4da;
+    &:first-child {
+      border-top: none;
+    }
+  }
+
+  td {
+    color: $text-color-dark;
+
+    a {
+      color: $links-color-dark;
+    }
+  }
+}
+
+
+
+/*--------------------- desktop version*/
+@include media-query(lap-and-up) {
+  .tabular-info {
+    th {
+      cursor: pointer;
+    }
+    th, td {
+      padding: 20px;
+    }
+    td:first-child {
+      font-weight: bold;
+    }
+  }
+}
+
+/*--------------------- mobile version*/
+@include media-query(palm) {
+  .tabular-info {
+    max-width: 100%;
+  }
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  .tabular-info table, .tabular-info thead, .tabular-info tbody, .tabular-info th, .tabular-info td, .tabular-info tr {
+    display: block;
+  }
+  .tabular-info {
+    tr {
+      padding: 10px;
+    }
+    td {
+      border: none;
+      white-space: normal;
+      text-align: left;
+
+      &:before {
+        width: 50%;
+        display: inline-block;
+        padding-right: 15px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+        content: attr(data-title);
+      }
+    }
+  }
+}

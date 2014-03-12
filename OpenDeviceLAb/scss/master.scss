@@ -5,13 +5,21 @@
 @import 'modules/_mixins.scss';
 
 
+/*Base*/
+@import 'base/_reset';
+@import 'base/_clearfix';
+
 /*Partials*/
-@import 'partials/_reset.scss';
-@import 'partials/_clearfix.scss';
 @import 'partials/_base.scss';
 @import 'partials/_layout.scss';
 @import 'partials/_framework.scss';
-@import 'partials/_components.scss';
+
+
+/*Components*/
+@import "components/_buttons.scss";
+@import "components/_animate.scss";
+@import "components/_tables.scss";
+@import "components/_maps.scss";
 
 /*Media*/
 @import "partials/_print.scss";

@@ -1,0 +1,34 @@
+/*BUTTON*/
+.btn {
+  font-weight: bold;
+  padding: 25px 35px;
+  display: inline-block;
+  @include vendor(transition, all 0.8s);
+  &:hover {
+    text-decoration: none;
+  }
+  &.dark-theme{
+    color: $text-color-lightest;
+    background: $button-bg-color;
+    &:hover {
+      background: lighten($button-bg-color, 10);
+    }
+  }
+  &.rounded{
+    border-radius: $border-radius-base;
+  }
+}
+/*---------------------------- Desktop & Tablet version*/
+@include media-query(lap-and-up) {
+    .pmh-btn {
+      position: absolute;
+      right: 10px;
+      top: 30px;
+    }
+}
+/*---------------------------- Mobile version */
+@include media-query(palm) {
+  .pmh-btn {
+      margin: 35px 0 45px 0;
+    }
+}

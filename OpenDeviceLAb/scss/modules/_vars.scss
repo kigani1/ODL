@@ -5,9 +5,6 @@ $base-spacing-unit-big: 60px;
 
 
 /*COLORS*/
-$base-color-theme-dark: #3a424d;
-$additional-color-theme-dark: #292d36;
-
 $color-white: #fff;
 $color-black: #000;
 $color-grey-blue: #3a424d;
@@ -32,8 +29,12 @@ $text-color-light: $color-grey-light;
 $text-color-dark: $color-black;
 
 $bg-color-theme-dark: $color-grey-blue;
+$bg-color-theme-darker: $color-grey-blue-dark;
 $bg-color-theme-light: $color-grey-light;
 $bg-color-theme-lightest: $color-white;
 
 $button-bg-color: $color-dark-green;
 $table-bg-color: $color-grey-lightest;
+
+/*BORDER RADIUS*/
+$border-radius-base: 5px;

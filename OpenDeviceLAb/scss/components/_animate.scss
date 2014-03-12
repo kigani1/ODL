@@ -1,14 +1,47 @@
 /*ANIMATED ELEMENTS*/
-
+%animation-finish {
+  @include vendor(transform, translate(0, 0));
+}
 .animate {
   max-width: 100%;
   img {
     max-width: 100%;
   }
-}
+  li
+  &.done {
+    @extend %animation-finish;
+  }
+  div{
+    position: relative;
+  }
 
-/*-------------------- Tablet & Desktop version --------------------*/
+  #animate-el-2 div:after, #animate-el-3 div:after, #animate-el-4 div:after, #animate-el-5 div:after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    right: 5px;
+    bottom: 15px;
+    background: rgba(20, 22, 26, 0.75);
+    z-index: -1;
+  }
+}
+#animate-el-2 {
+  @include vendor(transform, translate(-50px, 0));
+  &.done {
+    @extend %animation-finish;
+  }
+}
+#animate-el-4 {
+  @include vendor(transform, translate(50px, 0));
+  &.done {
+    @extend %animation-finish;
+  }
+}
+/*-------------------- Tablet & Desktop version*/
 @include media-query(lap-and-up) {
+
   @include keyframes(spaceboots) {
     0% {
       @include vendor(transform, translate(2px, 1px) rotate(0deg));
@@ -81,10 +114,6 @@
   #animate-el-2 {
     clear: right;
     max-width: 25%;
-    @include vendor(transform, translate(-50px, 0));
-    &.done {
-      @extend %animation-finish;
-    }
   }
   #animate-el-3 {
     position: relative;
@@ -99,10 +128,6 @@
   #animate-el-4 {
     margin-top: 10%;
     max-width: 15%;
-    @include vendor(transform, translate(50px, 0));
-    &.done {
-      @extend %animation-finish;
-    }
   }
   #animate-el-5 {
     margin-top: 7%;
@@ -114,7 +139,7 @@
   }
 }
 
-/*--------------- Tablet version - portrait -----------*/
+/*--------------- Tablet version - portrait*/
 @include media-query(portrait) {
 
   .animate {
@@ -142,9 +167,11 @@
   }
 }
 
-/*--------------- Mobile version -----------*/
+/*--------------- Mobile version*/
 @include media-query(palm) {
-
+  %animation-finish {
+    @include vendor(transform, translate(0, 0));
+  }
   .animate {
     margin-bottom: 65px;
     li {
@@ -164,145 +191,5 @@
       max-width: 30%;
     }
   }
-}
 
-/*TABLE*/
-.tabular-info {
-  width: 100%;
-  background: $table-bg-color;
-  th, td {
-    font-size: 16px;
-  }
-  thead {
-    background: $bg-color-theme-lightest;
-    font-weight: bold;
-    th {
-      text-align: left;
-
-    }
-    #sorttable_sortrevind,
-    #sorttable_sortfwdind,
-    .icon-sortable {
-      position: relative;
-      display: inline-block;
-      &:before, &:after {
-        display: block;
-        position: absolute;
-        margin-left: 5px;
-        vertical-align: middle;
-      }
-    }
-
-    #sorttable_sortrevind,
-    #sorttable_sortfwdind {
-      height: 15px;
-      vertical-align: top;
-      &:after {
-        top: 0;
-      }
-
-    }
-    #sorttable_sortrevind {
-      &:after {
-        content: "\25B4";
-      }
-    }
-    #sorttable_sortfwdind {
-      &:after {
-        content: "\25BE";
-      }
-    }
-
-    .icon-sortable {
-      height: 10px;
-      &:before {
-        content: "\25BE";
-        top: 0;
-      }
-      &:after {
-        content: "\25B4";
-        bottom: 0;
-      }
-    }
-    th.sorttable_sorted .icon-sortable, th.sorttable_sorted_reverse .icon-sortable {
-      display: none;
-    }
-  }
-  tr {
-    border-top: 1px solid #d9d4da;
-    &:first-child {
-      border-top: none;
-    }
-  }
-
-  td {
-    color: $text-color-dark;
-
-    a {
-      color: $links-color-dark;
-    }
-  }
-}
-
-/*GOOGLE MAP*/
-.google-map {
-  width: 100%;
-  height: 435px;
-  border: 5px solid #292e34;
-}
-
-/*--------------------- desktop version ----------------*/
-@include media-query(lap-and-up) {
-  /*TABLE*/
-  .tabular-info {
-    th {
-      cursor: pointer;
-    }
-    th, td {
-      padding: 20px;
-    }
-    td:first-child {
-      font-weight: bold;
-    }
-  }
-}
-
-/*--------------------- mobile version ----------------*/
-@include media-query(palm) {
-  /*TABLE*/
-  .tabular-info {
-    max-width: 100%;
-  }
-  thead tr {
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
-  }
-  .tabular-info table, .tabular-info thead, .tabular-info tbody, .tabular-info th, .tabular-info td, .tabular-info tr {
-    display: block;
-  }
-  .tabular-info {
-    tr {
-      padding: 10px;
-    }
-    td {
-      border: none;
-      white-space: normal;
-      text-align: left;
-
-      &:before {
-        width: 50%;
-        display: inline-block;
-        padding-right: 15px;
-        white-space: nowrap;
-        text-align: left;
-        font-weight: bold;
-        content: attr(data-title);
-      }
-    }
-  }
-  /*GOOGLE MAP*/
-  .google-map {
-    height: 300px;
-  }
 }

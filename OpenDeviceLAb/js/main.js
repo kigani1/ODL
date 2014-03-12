@@ -4,6 +4,9 @@ var openDeviceLab = {
         this.mapInit();
         this.animate();
         var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        function supportsSvg() {
+            return document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Shape", "1.0")
+        }
         $('a').on('click', function (e) {
             var goTo = $(this).attr('href');
             if (goTo == '#map-section') {
@@ -12,6 +15,9 @@ var openDeviceLab = {
             }
         });
         if(!isMobile){
+            $('body').addClass('hover-on');
+        }
+        if(!supportsSvg()){
             $('body').addClass('hover-on');
         }
     },
@@ -27,8 +33,15 @@ var openDeviceLab = {
         };
         var map = new google.maps.Map(document.getElementById("map-canvas"),
             mapOptions);
+        var icon = {
+            url: "img/sprite.png",
+            size: new google.maps.Size(38, 45),
+            //origin: new google.maps.Point(0, 0),
+            scaledSize: new google.maps.Size(160, 45)
+        };
         var marker = new google.maps.Marker({
-            position: mapOptions.center
+            position: mapOptions.center,
+            icon: icon
         });
 
         marker.setMap(map);
