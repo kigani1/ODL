@@ -1,3 +1,6 @@
+body{
+    background: $bg-color-theme-lightest;
+}
 .content-wrapper {
   max-width: 1170px;
   margin: 0 auto;
@@ -7,21 +10,26 @@
   h2 {
     margin: $base-spacing-unit 0;
   }
-}
-/*---------------------------- Tablet & Mobile version*/
-@include media-query(portable) {
-  .content-wrapper {
+    /*---------------------------- Tablet & Mobile version*/
+   @include media-query(portable) {  
     padding: 0 10px;
-  }
-
+} 
+    
 }
+
 /*HEADER*/
 .page-main-header {
   position: relative;
   background: $bg-color-theme-light;
+    
   .content-wrapper {
     padding-top: $base-spacing-unit-medium;
     padding-bottom: $base-spacing-unit-medium;
+      /*---------------------------- Mobile version*/
+     @include media-query(palm) {
+      text-align: center;
+    } 
+      
   }
 
   .logo {
@@ -30,82 +38,67 @@
     color: $text-color-dark;
     text-transform: uppercase;
     max-width: 250px;
+    position: relative;
+    padding-left: 60px;
     strong {
-      font-family: 'Arial Black', Arial, sans-serif;
+      font-family: 'Arial Black', Arial, sans-serif;      
     }
-    .logo-icon{
-      float: left;
-      margin-right: 10px;
-      border-radius: 25px;
+      &:before{
+      content: "";
       background-color: #000;
       display: inline-block;
       vertical-align: middle;
       position: relative;
+      border-radius: 50%;
       width: 50px;
       height: 50px;
       background-image: url("../img/sprite.svg");
       background-repeat: no-repeat;
       background-position: -148px -3px;
-      .no-svg &{
+      position: absolute;
+      left: 0;
+           .no-svg &{
         background-image: url("../img/sprite.png");
         background-repeat: no-repeat;
         background-position: -164px -3px;
         background-size: 400%;
       }
-    }
-  }
-  h2 {
-    margin-top: $base-spacing-unit-big;
+      }
 
   }
+ 
   canvas {
     position: absolute;
     width: 100%;
     height: 100%;
   }
-}
-/*---------------------------- Desktop & Tablet version*/
-@include media-query(lap-and-up) {
-  .page-main-header {
-    .page-main-heading {
-      clear: both;
-      max-width: 35%;
-      padding-left: 40px;
-    }
-  }
-}
-/*------------------------- Tablet portrait */
-@include media-query(portrait) {
-  .page-main-header {
-    .page-main-heading {
-      margin-top: 125px;
-      font-size: 33px;
-      max-width: 58%;
-    }
-  }
-}
-/*---------------------------- Mobile version */
-@include media-query(palm) {
-  .page-main-header {
-    .content-wrapper {
-      text-align: center;
-    }
-    .page-main-heading {
-      text-align: center;
-      font-size: 28px;
-    }
+  
+  .main-intro {
+    margin-top: $base-spacing-unit-big;
+        /*------------------------- Tablet & Desktop */
+        @include media-query(lap-and-up) {
+              clear: both;
+              max-width: 35%;
+              padding-left: 40px;
+        }
+          /*------------------------- Tablet portrait */
+        @include media-query(portrait) {
+          margin-top: 125px;
+          font-size: 33px;
+          max-width: 58%;
+        }
+          /*---------------------------- Mobile version */
+          @include media-query(palm) {
+          text-align: center;
+          font-size: 28px;
+      }
 
   }
-  .button {
-    margin: 35px 0 45px 0;
-  }
+        
 }
-
 
 /*SECTION*/
-section {
-  padding: 100px 0;
-}
+//TODO: remove styles from section
 .section-heading {
   text-align: center;
   margin-bottom: $base-spacing-unit-big;
@@ -130,7 +123,11 @@ section {
   background: $bg-color-theme-darker;
   padding: 15px;
   color: $text-color-lightest;
-  h6:before {
+    
+  h2{
+      font-size: 18px;
+      margin: 0;
+      &:before {
     content: "";
     display: block;
     width: 75px;
@@ -140,6 +137,7 @@ section {
   .no-svg & h6:before{
     background: url('../img/sprite.png') -60px 0 no-repeat;
     background-size: 260%;
+  }
   }
 }
 

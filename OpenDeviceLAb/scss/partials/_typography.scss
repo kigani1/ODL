@@ -9,12 +9,12 @@ body{
   font-family: Arial, no-serif;
   font-size: 18px;
   color: $text-color-light;
-  background: $bg-color-theme-lightest;
+  
   line-height: 1.4em;
 }
 
 /*MAIN HEADINGS*/
-.page-main-heading {
+.main-intro {
   font-size: 33px;
   color: $heading-color-light;
   font-weight: bold;

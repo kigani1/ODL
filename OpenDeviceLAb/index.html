@@ -7,60 +7,61 @@
           name="description">
     <link rel="stylesheet" href="css/master.css" type="text/css">
     <noscript><link rel="stylesheet" href="css/noscript.css" type="text/css"></noscript>
-    <script src="js/jquery.2.1.0.min.js" type="text/javascript"></script>
-    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDlY9QSNc0dlyEASbZBo1EmG3E1rncBSYg&sensor=false"></script>
-    <script src="js/sortable.js" type="text/javascript"></script>
-    <script src="js/fit-text.js"></script>
+    
     <title>Making Waves Open device Lab</title>
 </head>
 <body>
 <header id="pruned" class="js-canvas-animation page-main-header">
+    <!-- TODO: Span unsupported delete or fill -->
     <canvas><span class="unsupported"></span></canvas>
     <div class="content-wrapper cf">
-    <h1 class="logo l-float-left"><i class="logo-icon"></i><strong>Open Device Lab</strong><br><span>Kraków</span></h1>
-    <h2 class="l-float-right page-main-heading js-responsive-text">Making Waves Open Device Lab helps the local web developers to be able to test their work on the mobile
-        devices</h2>
-        <a href="#map-section" class="btn dark-theme rounded pmh-btn">Visit the lab</a>
+        <h1 class="logo l-float-left">
+            <strong>Open Device Lab</strong><br/>          
+            <span>Kraków</span></h1>
+    <p class="l-float-right main-intro js-responsive-text">Making Waves Open Device Lab helps the local web developers to be able to test their work on the mobile
+        devices</p>
+        <a href="#map-section" class="btn">Visit the lab</a>
 
      <ul class="cf animate">
-         <li id="animate-el-1"><img src="img/cup.svg">
+         <li id="animate-el-1"><img  src="img/cup.svg" alt="cup">
          </li>
          <li id="animate-el-2" class="shake">
-             <div><img src="img/ipad_mini.svg"></div>
+             <div><img src="img/ipad_mini1.svg" alt="ipad_mini"></div>
          </li>
          <li id="animate-el-3">
-             <div><img src="img/computer.svg"></div>
+             <div><img src="img/computer.svg" alt="computer"></div>
          </li>
          <li id="animate-el-4" class="shake">
-             <div> <img src="img/iphone_white.svg"></div>
+             <div> <img src="img/iphone_white.svg" alt="ihone_white"></div>
          </li>
          <li id="animate-el-5" class="shake">
-             <div><img src="img/blackberry.svg"></div>
+             <div><img src="img/blackberry.svg" alt="blackberry"></div>
          </li>
      </ul>
-    <noscript><img src="img/devices.png"></noscript>
+        <!-- TODO: move to canvas element -->
+    <noscript><img src="img/devices.png" alt="package of different electronic devices - from mobile phones to the computer"></noscript>
     </div>
 
 </header>
 
 
-<section  class="theme-dark">
-
+<section  class="theme-dark l-p100">
     <div class="content-wrapper">
+        <h1 class="l-hidden">About the project</h1>
         <ul class="l-three-in-row cf">
-            <li class="l-float-left">
+            <li class="l-float-left l-row-item">
                 <h2>About the project</h2>
                 <p>The web doesn't live on a desk anymore and we now need to test our work on multiple devices, instead
                     of just few desktop browsers.</p>
             </li>
-            <li class="l-float-left">
+            <li class="l-float-left l-row-item">
                 <h2>Visit the lab</h2>
 
                 <p>The idea is that anyone can pop round and use the devices. We are located in center of Cracow, near
                     the main railway station.</p>
                 <a href="#map-section">View location &#187;</a>
             </li>
-            <li class="l-float-left">
+            <li class="l-float-left l-row-item">
                 <h2>Participate in the project</h2>
 
                 <p>The idea is that anyone can pop round and use the devices. We are located in center of Cracow, near
@@ -70,9 +71,9 @@
         </ul>
     </div>
 </section>
-<section  class="theme-light l-additional-gutter">
+<section  class="theme-light l-p100 l-additional-gutter">
     <div class="content-wrapper">
-        <h2 class="section-heading">Device Library</h2>
+        <h1 class="section-heading">Device Library</h1>
         <table class="tabular-info sortable">
             <thead>
             <tr>
@@ -112,15 +113,14 @@
     </div>
 </section>
 
-<section class="theme-dark l-additional-gutter">
-    <a name="map-section"></a>
+<section id="map-section" class="theme-dark l-p100 l-additional-gutter">
     <div class="content-wrapper">
-        <h2 class="section-heading">Visit the lab</h2>
+        <h1 class="section-heading">Visit the lab</h1>
 
         <div class="google-map" id="map-canvas"></div>
 
         <div class="l-two-in-row cf">
-            <p class="l-float-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras accumsan aliquam
+            <p class="l-float-left l-row-item">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras accumsan aliquam
                 fringilla. Sed in metus eu
                 nunc vehicula tempus quis nec magna. Vestibulum ac iaculis est, quis faucibus nulla. Vivamus luctus
                 dolor
@@ -129,8 +129,8 @@
                 posuere cubilia Curae; Ut quis lorem lacinia, ornare diam ut, elementum tellus. Phasellus posuere dolor
                 dignissim lacus fringilla dapibus. </p>
 
-            <footer class="l-float-left section-footer">
-                <h6>Making Waves Polska</h6>
+            <footer class="l-float-left section-footer l-row-item">
+                <h2>Making Waves Polska</h2>
 
                 <p>ul. Adama Asnyka 9<br>31-144 Kraków<br>tel: + 48 12 357 20 50<br>fax: + 48&nbsp; 12 290 66 67<br>mail:
                     <a href="mailto:biuro@makingwaves.pl">biuro@makingwaves.pl</a>
@@ -139,6 +139,15 @@
         </div>
     </div>
 </section>
+    
+    <script src="js/jquery.2.1.0.min.js" type="text/javascript"></script>
+    <!--[if lt IE 9] -->
+        <script src="js/html5-fix.js" type="text/javascript"></script>
+        <script src="js/respond.js" type="text/javascript"></script>
+    <!-- [endif]-->
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDlY9QSNc0dlyEASbZBo1EmG3E1rncBSYg&sensor=false"></script>
+    <script src="js/sortable.js" type="text/javascript"></script>
+    <script src="js/fit-text.js"></script>
 <script src="js/draw-lines.js" type="text/javascript"></script>
 <script src="js/main.js" type="text/javascript"></script>
 </body>

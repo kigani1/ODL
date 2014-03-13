@@ -1,11 +1,15 @@
-/*ANIMATED ELEMENTS*/
-%animation-finish {
-  @include vendor(transform, translate(0, 0));
-}
+
 .animate {
   max-width: 100%;
+    li{
+    overflow: hidden
+        }
   img {
     max-width: 100%;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+
   }
   li
   &.done {
@@ -15,7 +19,7 @@
     position: relative;
   }
 
-  #animate-el-2 div:after, #animate-el-3 div:after, #animate-el-4 div:after, #animate-el-5 div:after{
+  #animate-el-2 div:before, #animate-el-3 div:before, #animate-el-4 div:before, #animate-el-5 div:before{
     content: "";
     display: block;
     position: absolute;
@@ -27,18 +31,7 @@
     z-index: -1;
   }
 }
-#animate-el-2 {
-  @include vendor(transform, translate(-50px, 0));
-  &.done {
-    @extend %animation-finish;
-  }
-}
-#animate-el-4 {
-  @include vendor(transform, translate(50px, 0));
-  &.done {
-    @extend %animation-finish;
-  }
-}
+
 /*-------------------- Tablet & Desktop version*/
 @include media-query(lap-and-up) {
 
@@ -92,11 +85,7 @@
   .animate {
     li {
       float: left;
-      -webkit-transition: -webkit-transform 2s, opacity 2s;
-      -moz-transition: -moz-transform 2s, opacity 2s;
-      -ms-transition: -ms-transform 2s, opacity 2s;
-      -o-transition: -o-transform 2s, opacity 2s;
-      transition: transform 2s, opacity 2s;
+      @include vendor-value(transition, transform 2s, opacity 2s);
       padding-right: 5%;
 
     }
@@ -114,6 +103,10 @@
   #animate-el-2 {
     clear: right;
     max-width: 25%;
+       @include vendor(transform, translate(-50px, 0));
+  &.done {
+    @extend %animation-finish;
+  }
   }
   #animate-el-3 {
     position: relative;
@@ -125,9 +118,15 @@
 
     }
   }
+  
+
   #animate-el-4 {
     margin-top: 10%;
     max-width: 15%;
+       @include vendor(transform, translate(50px, 0));
+  &.done {
+    @extend %animation-finish;
+  }
   }
   #animate-el-5 {
     margin-top: 7%;
@@ -169,9 +168,6 @@
 
 /*--------------- Mobile version*/
 @include media-query(palm) {
-  %animation-finish {
-    @include vendor(transform, translate(0, 0));
-  }
   .animate {
     margin-bottom: 65px;
     li {
@@ -190,6 +186,9 @@
       margin-left: -20px;
       max-width: 30%;
     }
+      #animate-el-2 div:before, #animate-el-3 div:before, #animate-el-4 div:before, #animate-el-5 div:before{
+    z-index: 0;
+  }
   }
 
 }

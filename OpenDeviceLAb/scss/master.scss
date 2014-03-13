@@ -1,8 +1,8 @@
 /*Modules*/
 
-@import 'modules/_defaults.scss';
-@import 'modules/_vars.scss';
-@import 'modules/_mixins.scss';
+@import 'helpers/_defaults.scss';
+@import 'helpers/_vars.scss';
+@import 'helpers/_mixins.scss';
 
 
 /*Base*/
@@ -10,7 +10,7 @@
 @import 'base/_clearfix';
 
 /*Partials*/
-@import 'partials/_base.scss';
+@import 'partials/_typography.scss';
 @import 'partials/_layout.scss';
 @import 'partials/_framework.scss';
 

@@ -5,7 +5,7 @@ var openDeviceLab = {
         this.animate();
         var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
         function supportsSvg() {
-            return document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Shape", "1.0")
+            return document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Shape", "1.1")
         }
         $('a').on('click', function (e) {
             var goTo = $(this).attr('href');
@@ -17,8 +17,9 @@ var openDeviceLab = {
         if(!isMobile){
             $('body').addClass('hover-on');
         }
+        console.log(supportsSvg());
         if(!supportsSvg()){
-            $('body').addClass('hover-on');
+            $('body').addClass('no-svg');
         }
     },
     scrollToPoint: function (scrollTo) {

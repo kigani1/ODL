@@ -1,7 +1,14 @@
 .l-float-left {
   margin: $base-spacing-unit-medium 0;
 }
-
+.l-hidden{
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+}
+.l-p100{
+    padding: 100px 0;
+}
 @include media-query(lap-and-up) {
   .l-float-left {
     float: left;
@@ -11,20 +18,20 @@
     float: right;
   }
   .l-three-in-row {
-    .l-float-left {
+    .l-row-item {
       width: 33.3%;
       padding-right: $base-spacing-unit-medium;
     }
-    .l-float-left:nth-of-type(3n) {
+    .l-row-item:nth-of-type(3n) {
       padding-right: 0;
     }
   }
   .l-two-in-row {
-    .l-float-left:first-child {
+    .l-row-item:first-child {
       width: 60%;
       padding-right: 45px;
     }
-    .l-float-left:nth-child(2) {
+    .l-row-item:nth-child(2) {
       width: 40%;
     }
   }
