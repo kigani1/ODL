@@ -4,9 +4,9 @@ var openDeviceLab = {
         this.mapInit();
         this.animate();
         var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-        function supportsSvg() {
-            return document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Shape", "1.1")
-        }
+//        function supportsSvg() {
+//            return document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Shape", "1.1")
+//        }
         $('a').on('click', function (e) {
             var goTo = $(this).attr('href');
             if (goTo == '#map-section') {
@@ -17,10 +17,14 @@ var openDeviceLab = {
         if(!isMobile){
             $('body').addClass('hover-on');
         }
-        console.log(supportsSvg());
-        if(!supportsSvg()){
-            $('body').addClass('no-svg');
-        }
+      
+//        if(!supportsSvg()){
+//            $('body').addClass('no-svg');
+//        }
+        
+      
+        
+        
     },
     scrollToPoint: function (scrollTo) {
         $('html, body').stop().animate({
@@ -53,7 +57,7 @@ var openDeviceLab = {
         var randomValue = function (array) {
             return array[Math.floor(Math.random() * array.length)]
         }
-        $('.animate').find('li').eq(0).addClass('done')
+        $('.animate').find('li').eq(0).addClass('done');
         setInterval(function () {
             var el = $('.done').last().next();
             el.css({

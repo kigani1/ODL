@@ -1,7 +1,7 @@
 function drawVineWithLattice(context, lattice, x, y, interations, sort, prune) {
 
     // Set stroke colour
-    context.lineWidth = 0.3;
+    context.lineWidth = 1.5;
     context.strokeStyle = "rgb(255, 255, 255)";
 
     // Create initial branch
@@ -157,11 +157,17 @@ $(document).ready(function() {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
         if (canvas.getContext) {
-            var context = canvas.getContext("2d");
+            var ctx = canvas.getContext("2d");
 
-            // Draw vines
+            var height = $('#pruned').height();
+            var width = $('#pruned').width();
+            // Draw lines
             var prune = $(this).attr("id") == "pruned";
-            drawVineWithLattice(context, new Array(), 500, 500, 100, false, prune);
+            drawVineWithLattice(ctx, new Array(), (width*0.5), (height*0.8), 100, false, prune);
         }
+        
+   
+        
+        
     });
 });

@@ -1,5 +1,7 @@
 <!DOCTYPE html>
+
 <html>
+<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
 <head>
     <meta charset="utf-8">
     <meta content='width=device-width, initial-scale=1.0' name='viewport'/>
@@ -7,7 +9,10 @@
           name="description">
     <link rel="stylesheet" href="css/master.css" type="text/css">
     <noscript><link rel="stylesheet" href="css/noscript.css" type="text/css"></noscript>
-    
+    <script src="js/modernizr.js" type="text/javascript"></script>
+    <!--[if lt IE 9]>
+        <script src="js/respond.js" type="text/javascript"></script>
+    <![endif]-->
     <title>Making Waves Open device Lab</title>
 </head>
 <body>
@@ -141,10 +146,6 @@
 </section>
     
     <script src="js/jquery.2.1.0.min.js" type="text/javascript"></script>
-    <!--[if lt IE 9] -->
-        <script src="js/html5-fix.js" type="text/javascript"></script>
-        <script src="js/respond.js" type="text/javascript"></script>
-    <!-- [endif]-->
     <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDlY9QSNc0dlyEASbZBo1EmG3E1rncBSYg&sensor=false"></script>
     <script src="js/sortable.js" type="text/javascript"></script>
     <script src="js/fit-text.js"></script>
