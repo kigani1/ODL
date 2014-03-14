@@ -1,46 +1,68 @@
-.l-float-left {
-  margin: $base-spacing-unit-medium 0;
+.l-hidden {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
 }
-.l-hidden{
-    position: absolute;
-    left: -9999px;
-    top: -9999px;
-}
-.l-p100{
-    padding: 100px 0;
-}
-@include media-query(lap-and-up) {
-  .l-float-left {
-    float: left;
-  }
 
-  .l-float-right {
-    float: right;
+.l-float-left {
+  float: left;
+}
+
+.l-float-right {
+  float: right;
+}
+
+.l-three-in-row {
+  .l-row-item {
+    width: 33.3%;
+    margin: $base-spacing-unit-medium 0;
+    padding-right: $base-spacing-unit-medium;
   }
-  .l-three-in-row {
-    .l-row-item {
-      width: 33.3%;
-      padding-right: $base-spacing-unit-medium;
-    }
-    .l-row-item:nth-of-type(3n) {
-      padding-right: 0;
-    }
+  .l-row-item:nth-of-type(3n) {
+    padding-right: 0;
   }
-  .l-two-in-row {
-    .l-row-item:first-child {
+}
+
+.l-two-in-row {
+
+  .l-row-item {
+    margin: $base-spacing-unit-medium 0;
+    &:first-child {
       width: 60%;
       padding-right: 45px;
     }
-    .l-row-item:nth-child(2) {
+    &:nth-child(2) {
       width: 40%;
     }
   }
-
 }
 
-@include media-query(desk) {
-  .l-additional-gutter {
-    padding-left: 110px;
-    padding-right: 110px;
+@include media-query(palm) {
+  .l-float-left {
+    float: none;
+  }
+  .l-float-right {
+    float: none;
+  }
+  .l-three-in-row,
+  .l-two-in-row {
+    .l-row-item:nth-child(n) {
+      width: 100%;
+      padding-right: 0;
+    }
   }
 }
+
+.l-pv100 {
+  padding: 100px 0;
+}
+
+.l-ph-100 {
+  padding-left: 100px;
+  padding-right: 100px;
+  @include media-query(portable) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+

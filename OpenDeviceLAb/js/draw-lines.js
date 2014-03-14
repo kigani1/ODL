@@ -7,38 +7,38 @@ function drawVineWithLattice(context, lattice, x, y, interations, sort, prune) {
     // Create initial branch
     var branches = new Array();
     branches.push({
-        points:new Array({x:x, y:y}, {x:x, y:y}, {x:x, y:y}, {x:x, y:y}),
-        angle:0,
-        distanceToLattice:10000
+        points: new Array({x: x, y: y}, {x: x, y: y}, {x: x, y: y}, {x: x, y: y}),
+        angle: 0,
+        distanceToLattice: 10000
     });
 
     // Start drawing splines at t=0
     var t = 0;
 
     // Drawing interval
-    var interval = setInterval(function() {
+    var interval = setInterval(function () {
 
         // Draw branches
         for (var i in branches) {
 
             // Draw spline segment
-            var ax = (-branches[i].points[0].x + 3*branches[i].points[1].x - 3*branches[i].points[2].x + branches[i].points[3].x) / 6;
-            var ay = (-branches[i].points[0].y + 3*branches[i].points[1].y - 3*branches[i].points[2].y + branches[i].points[3].y) / 6;
-            var bx = (branches[i].points[0].x - 2*branches[i].points[1].x + branches[i].points[2].x) / 2;
-            var by = (branches[i].points[0].y - 2*branches[i].points[1].y + branches[i].points[2].y) / 2;
+            var ax = (-branches[i].points[0].x + 3 * branches[i].points[1].x - 3 * branches[i].points[2].x + branches[i].points[3].x) / 6;
+            var ay = (-branches[i].points[0].y + 3 * branches[i].points[1].y - 3 * branches[i].points[2].y + branches[i].points[3].y) / 6;
+            var bx = (branches[i].points[0].x - 2 * branches[i].points[1].x + branches[i].points[2].x) / 2;
+            var by = (branches[i].points[0].y - 2 * branches[i].points[1].y + branches[i].points[2].y) / 2;
             var cx = (-branches[i].points[0].x + branches[i].points[2].x) / 2;
             var cy = (-branches[i].points[0].y + branches[i].points[2].y) / 2;
-            var dx = (branches[i].points[0].x + 4*branches[i].points[1].x + branches[i].points[2].x) / 6;
-            var dy = (branches[i].points[0].y + 4*branches[i].points[1].y + branches[i].points[2].y) / 6;
+            var dx = (branches[i].points[0].x + 4 * branches[i].points[1].x + branches[i].points[2].x) / 6;
+            var dy = (branches[i].points[0].y + 4 * branches[i].points[1].y + branches[i].points[2].y) / 6;
             context.beginPath();
             context.moveTo(
-                ax*Math.pow(t, 3) + bx*Math.pow(t, 2) + cx*t + dx,
-                ay*Math.pow(t, 3) + by*Math.pow(t, 2) + cy*t + dy
+                ax * Math.pow(t, 3) + bx * Math.pow(t, 2) + cx * t + dx,
+                ay * Math.pow(t, 3) + by * Math.pow(t, 2) + cy * t + dy
             );
 
             context.lineTo(
-                ax*Math.pow(t+0.1, 3) + bx*Math.pow(t+0.1, 2) + cx*(t+0.1) + dx,
-                ay*Math.pow(t+0.1, 3) + by*Math.pow(t+0.1, 2) + cy*(t+0.1) + dy
+                ax * Math.pow(t + 0.1, 3) + bx * Math.pow(t + 0.1, 2) + cx * (t + 0.1) + dx,
+                ay * Math.pow(t + 0.1, 3) + by * Math.pow(t + 0.1, 2) + cy * (t + 0.1) + dy
             );
             context.stroke();
             context.closePath();
@@ -78,29 +78,29 @@ function drawVineWithLattice(context, lattice, x, y, interations, sort, prune) {
 
                     // Add to new branch array
                     new_branches.push({
-                        points:new Array(
+                        points: new Array(
                             branches[j].points[1],
                             branches[j].points[2],
                             branches[j].points[3],
-                            {x:x2, y:y2}
+                            {x: x2, y: y2}
                         ),
-                        angle:angle,
-                        distanceToLattice:distanceToLattice
+                        angle: angle,
+                        distanceToLattice: distanceToLattice
                     });
                 }
             }
 
             // Sort branches by distance to lattice
-            new_branches.sort(function(a, b) {
+            new_branches.sort(function (a, b) {
                 return a.distanceToLattice - b.distanceToLattice;
             });
 
             // If over 10 branches, prune the branches furthest from the lattice
             if (prune) {
                 if (sort) {
-                    while (new_branches.length > 15) new_branches.pop();
+                    while (new_branches.length > 10) new_branches.pop();
                 } else {
-                    while (new_branches.length > 15) {
+                    while (new_branches.length > 10) {
                         new_branches.splice(Math.floor(Math.random() * new_branches.length), 1);
                     }
                 }
@@ -148,10 +148,10 @@ function distancePointToLine(point, line) {
 
 
 // Get context
-$(document).ready(function() {
+$(document).ready(function () {
 
 
-    $(".js-canvas-animation").each(function() {
+    $(".js-cnv-animation").each(function () {
         // Get context
         var canvas = $(this).children("canvas")[0];
         canvas.width = window.innerWidth;
@@ -159,15 +159,13 @@ $(document).ready(function() {
         if (canvas.getContext) {
             var ctx = canvas.getContext("2d");
 
-            var height = $('#pruned').height();
-            var width = $('#pruned').width();
+            var height = $('#cnv-curves').height();
+            var width = $('#cnv-curves').width();
             // Draw lines
-            var prune = $(this).attr("id") == "pruned";
-            drawVineWithLattice(ctx, new Array(), (width*0.5), (height*0.8), 100, false, prune);
+            var prune = $(this).attr("id") == "cnv-curves";
+            drawVineWithLattice(ctx, new Array(), (width * 0.5), (height * 0.8), 100, false, prune);
         }
-        
-   
-        
-        
+
+
     });
 });

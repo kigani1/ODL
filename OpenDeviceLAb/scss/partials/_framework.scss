@@ -1,35 +1,37 @@
-body{
-    background: $bg-color-theme-lightest;
+body {
+  background: $bg-color-theme-lightest;
+  overflow-x: hidden;
 }
+
 .content-wrapper {
   max-width: 1170px;
   margin: 0 auto;
-  position: relative;
   padding: 0 15px;
   position: relative;
+  z-index: 100;
   h2 {
     margin: $base-spacing-unit 0;
   }
-    /*---------------------------- Tablet & Mobile version*/
-   @include media-query(portable) {  
+  /*---------------------------- Tablet & Mobile version*/
+  @include media-query(portable) {
     padding: 0 10px;
-} 
-    
+  }
+
 }
 
 /*HEADER*/
 .page-main-header {
   position: relative;
   background: $bg-color-theme-light;
-    
+  z-index: 0;
   .content-wrapper {
     padding-top: $base-spacing-unit-medium;
     padding-bottom: $base-spacing-unit-medium;
-      /*---------------------------- Mobile version*/
-     @include media-query(palm) {
+    /*---------------------------- Mobile version*/
+    @include media-query(palm) {
       text-align: center;
-    } 
-      
+    }
+
   }
 
   .logo {
@@ -41,9 +43,9 @@ body{
     position: relative;
     padding-left: 60px;
     strong {
-      font-family: 'Arial Black', Arial, sans-serif;      
+      font-family: 'Arial Black', Arial, sans-serif;
     }
-      &:before{
+    &:before {
       content: "";
       background-color: #000;
       display: inline-block;
@@ -57,53 +59,47 @@ body{
       background-position: -148px -3px;
       position: absolute;
       left: 0;
-           .no-svg &{
+      .no-svg & {
         background-image: url("../img/sprite.png");
         background-color: transparent;
         background-repeat: no-repeat;
         background-position: -133px 0;
         background-size: 360%;
       }
-      }
+    }
 
   }
- 
-  canvas {
-    position: absolute;
-    max-width: 100%;
-    max-height: 100%;
-  }
-  
+
   .main-intro {
     margin-top: $base-spacing-unit-big;
-        /*------------------------- Tablet & Desktop */
-        @include media-query(lap-and-up) {
-              clear: both;
-              max-width: 35%;
-              padding-left: 40px;
-        }
-          /*------------------------- Tablet portrait */
-        @include media-query(portrait) {
-          margin-top: 125px;
-          font-size: 33px;
-          max-width: 58%;
-        }
-          /*---------------------------- Mobile version */
-          @include media-query(palm) {
-          text-align: center;
-          font-size: 28px;
-      }
+    /*------------------------- Tablet & Desktop */
+    @include media-query(lap-and-up) {
+      clear: both;
+      max-width: 35%;
+      padding-left: 40px;
+    }
+    /*------------------------- Tablet portrait */
+    @include media-query(portrait) {
+      margin-top: 125px;
+      font-size: 33px;
+      max-width: 58%;
+    }
+    /*---------------------------- Mobile version */
+    @include media-query(palm) {
+      text-align: center;
+      font-size: 28px;
+    }
 
   }
-        
+
 }
 
 /*SECTION*/
-//TODO: remove styles from section
 .section-heading {
   text-align: center;
   margin-bottom: $base-spacing-unit-big;
 }
+
 .theme-dark {
   background-color: $bg-color-theme-dark;
   .section-heading {
@@ -118,28 +114,27 @@ body{
   }
 }
 
-
 /*FOOTER*/
 .section-footer {
   background: $bg-color-theme-darker;
   padding: 15px;
   color: $text-color-lightest;
-    
-  h2{
-      font-size: 18px;
-      margin: 0;
-      &:before {
-    content: "";
-    display: block;
-    width: 75px;
-    height: 70px;
-    background: url('../img/sprite.svg') -62px 0 no-repeat;
-    .no-svg &{
-    background: url('../img/sprite.png') -60px 0 no-repeat;
-    background-size: 260%;
-  }
-  }
- 
+
+  h2 {
+    font-size: 18px;
+    margin: 0;
+    &:before {
+      content: "";
+      display: block;
+      width: 75px;
+      height: 70px;
+      background: url('../img/sprite.svg') -62px 0 no-repeat;
+      .no-svg & {
+        background: url('../img/sprite.png') -60px 0 no-repeat;
+        background-size: 260%;
+      }
+    }
+
   }
 }
 

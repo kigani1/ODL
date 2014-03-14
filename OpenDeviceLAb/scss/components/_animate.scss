@@ -1,9 +1,9 @@
 
 .animate {
   max-width: 100%;
-    li{
+  li {
     overflow: hidden
-        }
+  }
   img {
     max-width: 100%;
     -webkit-backface-visibility: hidden;
@@ -15,21 +15,21 @@
   &.done {
     @extend %animation-finish;
   }
-  div{
+  div {
     position: relative;
   }
 
-  #animate-el-2 div:before, #animate-el-3 div:before, #animate-el-4 div:before, #animate-el-5 div:before{
-    content: "";
-    display: block;
-    position: absolute;
-    top: 10px;
-    left: 5px;
-    right: 5px;
-    bottom: 15px;
-    background: rgba(20, 22, 26, 0.75);
-    z-index: -1;
-  }
+}
+#animate-el-2 div:before, #animate-el-3 div:before, #animate-el-4 div:before, #animate-el-5 div:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  right: 5px;
+  bottom: 15px;
+  background: rgba(20, 22, 26, 0.75);
+  z-index: -1;
 }
 
 /*-------------------- Tablet & Desktop version*/
@@ -103,10 +103,10 @@
   #animate-el-2 {
     clear: right;
     max-width: 25%;
-       @include vendor(transform, translate(-50px, 0));
-  &.done {
-    @extend %animation-finish;
-  }
+    @include vendor(transform, translate(-50px, 0));
+    &.done {
+      @extend %animation-finish;
+    }
   }
   #animate-el-3 {
     position: relative;
@@ -118,15 +118,14 @@
 
     }
   }
-  
 
   #animate-el-4 {
     margin-top: 10%;
     max-width: 15%;
-       @include vendor(transform, translate(50px, 0));
-  &.done {
-    @extend %animation-finish;
-  }
+    @include vendor(transform, translate(50px, 0));
+    &.done {
+      @extend %animation-finish;
+    }
   }
   #animate-el-5 {
     margin-top: 7%;
@@ -175,20 +174,32 @@
       display: inline-block;
       float: none;
     }
-    #animate-el-1, #animate-el-5, #animate-el-3 {
-      display: none;
-    }
-    #animate-el-2 {
-      padding-right: 0;
-      max-width: 70%;
-    }
-    #animate-el-4 {
-      margin-left: -20px;
-      max-width: 30%;
-    }
-      #animate-el-2 div:before, #animate-el-3 div:before, #animate-el-4 div:before, #animate-el-5 div:before{
-    z-index: 0;
   }
+  #animate-el-1, #animate-el-5, #animate-el-3 {
+    display: none;
+  }
+  #animate-el-2 {
+    padding-right: 0;
+    max-width: 70%;
+  }
+  #animate-el-4 {
+    margin-left: -20px;
+    max-width: 30%;
   }
 
+}
+
+/*CANVAS*/
+
+canvas {
+  position: absolute;
+  max-width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+.ie8 canvas {
+  position: static;
+  max-width: 1170px;
+  margin: 0 auto;
 }

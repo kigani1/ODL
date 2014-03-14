@@ -1,21 +1,30 @@
 @media print {
   body, section, footer {
     background: #fff;
-    color: #000; }
+    color: #000;
+  }
   body a, section a, footer a {
     text-decoration: underline;
-    color: #000; }
+    color: #000;
+  }
 
   .page-main-header .main-intro {
     max-width: 100%;
-    color: #000; }
+    color: #000;
+  }
   .page-main-header .btn {
-    display: none; }
+    display: none;
+  }
 
   .animate {
-    display: none; }
+    display: none;
+  }
 
   section {
     padding: 25px 0;
-    page-break-inside: avoid; }
+    page-break-inside: avoid;
+  }
+  canvas {
+    display: none;
+  }
 }

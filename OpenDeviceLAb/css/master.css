@@ -99,48 +99,64 @@ a {
   a:hover {
     text-decoration: underline; }
 
-.l-float-left {
-  margin: 30px 0; }
-
 .l-hidden {
   position: absolute;
   left: -9999px;
   top: -9999px; }
 
-.l-p100 {
-  padding: 100px 0; }
+.l-float-left {
+  float: left; }
 
-@media (min-width: 768px) {
-  .l-float-left {
-    float: left; }
+.l-float-right {
+  float: right; }
 
-  .l-float-right {
-    float: right; }
+.l-three-in-row .l-row-item {
+  width: 33.3%;
+  margin: 30px 0;
+  padding-right: 30px; }
+.l-three-in-row .l-row-item:nth-of-type(3n) {
+  padding-right: 0; }
 
-  .l-three-in-row .l-row-item {
-    width: 33.3%;
-    padding-right: 30px; }
-  .l-three-in-row .l-row-item:nth-of-type(3n) {
-    padding-right: 0; }
-
+.l-two-in-row .l-row-item {
+  margin: 30px 0; }
   .l-two-in-row .l-row-item:first-child {
     width: 60%;
     padding-right: 45px; }
   .l-two-in-row .l-row-item:nth-child(2) {
-    width: 40%; } }
-@media (min-width: 1025px) {
-  .l-additional-gutter {
-    padding-left: 110px;
-    padding-right: 110px; } }
+    width: 40%; }
+
+@media (max-width: 767px) {
+  .l-float-left {
+    float: none; }
+
+  .l-float-right {
+    float: none; }
+
+  .l-three-in-row .l-row-item:nth-child(n),
+  .l-two-in-row .l-row-item:nth-child(n) {
+    width: 100%;
+    padding-right: 0; } }
+.l-pv100 {
+  padding: 100px 0; }
+
+.l-ph-100 {
+  padding-left: 100px;
+  padding-right: 100px; }
+  @media (max-width: 1024px) {
+    .l-ph-100 {
+      padding-left: 0;
+      padding-right: 0; } }
+
 body {
-  background: white; }
+  background: white;
+  overflow-x: hidden; }
 
 .content-wrapper {
   max-width: 1170px;
   margin: 0 auto;
-  position: relative;
   padding: 0 15px;
   position: relative;
+  z-index: 100;
   /*---------------------------- Tablet & Mobile version*/ }
   .content-wrapper h2 {
     margin: 20px 0; }
@@ -151,7 +167,8 @@ body {
 /*HEADER*/
 .page-main-header {
   position: relative;
-  background: #c5bec6; }
+  background: #c5bec6;
+  z-index: 0; }
   .page-main-header .content-wrapper {
     padding-top: 30px;
     padding-bottom: 30px;
@@ -189,10 +206,6 @@ body {
         background-repeat: no-repeat;
         background-position: -133px 0;
         background-size: 360%; }
-  .page-main-header canvas {
-    position: absolute;
-    max-width: 100%;
-    max-height: 100%; }
   .page-main-header .main-intro {
     margin-top: 60px;
     /*------------------------- Tablet & Desktop */
@@ -286,16 +299,17 @@ body {
     -ms-backface-visibility: hidden; }
   .animate div {
     position: relative; }
-  .animate #animate-el-2 div:before, .animate #animate-el-3 div:before, .animate #animate-el-4 div:before, .animate #animate-el-5 div:before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 10px;
-    left: 5px;
-    right: 5px;
-    bottom: 15px;
-    background: rgba(20, 22, 26, 0.75);
-    z-index: -1; }
+
+#animate-el-2 div:before, #animate-el-3 div:before, #animate-el-4 div:before, #animate-el-5 div:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  right: 5px;
+  bottom: 15px;
+  background: rgba(20, 22, 26, 0.75);
+  z-index: -1; }
 
 /*-------------------- Tablet & Desktop version*/
 @media (min-width: 768px) {
@@ -714,16 +728,29 @@ body {
       vertical-align: middle;
       display: inline-block;
       float: none; }
-    .animate #animate-el-1, .animate #animate-el-5, .animate #animate-el-3 {
-      display: none; }
-    .animate #animate-el-2 {
-      padding-right: 0;
-      max-width: 70%; }
-    .animate #animate-el-4 {
-      margin-left: -20px;
-      max-width: 30%; }
-    .animate #animate-el-2 div:before, .animate #animate-el-3 div:before, .animate #animate-el-4 div:before, .animate #animate-el-5 div:before {
-      z-index: 0; } }
+
+  #animate-el-1, #animate-el-5, #animate-el-3 {
+    display: none; }
+
+  #animate-el-2 {
+    padding-right: 0;
+    max-width: 70%; }
+
+  #animate-el-4 {
+    margin-left: -20px;
+    max-width: 30%; } }
+/*CANVAS*/
+canvas {
+  position: absolute;
+  max-width: 100%;
+  bottom: 0;
+  left: 0; }
+
+.ie8 canvas {
+  position: static;
+  max-width: 1170px;
+  margin: 0 auto; }
+
 /*TABLE*/
 .tabular-info {
   width: 100%;
@@ -849,4 +876,7 @@ body {
 
   section {
     padding: 25px 0;
-    page-break-inside: avoid; } }
+    page-break-inside: avoid; }
+
+  canvas {
+    display: none; } }

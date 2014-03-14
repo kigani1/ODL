@@ -4,27 +4,18 @@ var openDeviceLab = {
         this.mapInit();
         this.animate();
         var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-//        function supportsSvg() {
-//            return document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Shape", "1.1")
-//        }
-        $('a').on('click', function (e) {
+
+        $('a').on('touchstart click', function (e) {
             var goTo = $(this).attr('href');
             if (goTo == '#map-section') {
                 self.scrollToPoint($('.google-map').prev('.section-heading'));
                 e.preventDefault();
             }
         });
-        if(!isMobile){
+        if (!isMobile) {
             $('body').addClass('hover-on');
         }
-      
-//        if(!supportsSvg()){
-//            $('body').addClass('no-svg');
-//        }
-        
-      
-        
-        
+
     },
     scrollToPoint: function (scrollTo) {
         $('html, body').stop().animate({

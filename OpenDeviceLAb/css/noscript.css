@@ -1,14 +1,24 @@
 .animate {
   display: none; }
 
-noscript img {
-  max-width: 100%; }
+.unsupported img {
+  max-width: 100%;
+  display: block;
+  margin: 20px auto; }
 
-.page-main-header .main-intro {
-  max-width: none; }
+.page-main-header {
+  padding: 20px 0; }
+  .page-main-header .main-intro {
+    max-width: none;
+    padding-left: 0; }
 
 .tabular-info thead .icon-sortable:before, .tabular-info thead .icon-sortable:after {
   display: none; }
+
+.page-main-header canvas {
+  position: static;
+  max-width: 1170px;
+  margin: 0 auto; }
 
 #map-canvas {
   display: none; }

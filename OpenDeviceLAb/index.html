@@ -1,61 +1,66 @@
 <!DOCTYPE html>
 
-<html>
-<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
+
+<!--[if IE 8 ]>
+<html class="ie8"> <![endif]-->
+<!--[if (gt IE 8)|!(IE)]><!-->
+<html> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
     <meta content='width=device-width, initial-scale=1.0' name='viewport'/>
     <meta content="Making Waves Open Device lab is a project to help the local web developers to be able to test their work on the mobile devices"
           name="description">
     <link rel="stylesheet" href="css/master.css" type="text/css">
-    <noscript><link rel="stylesheet" href="css/noscript.css" type="text/css"></noscript>
+    <noscript>
+        <link rel="stylesheet" href="css/noscript.css" type="text/css">
+    </noscript>
     <script src="js/modernizr.js" type="text/javascript"></script>
-    <!--[if lt IE 9]>
-        <script src="js/respond.js" type="text/javascript"></script>
-    <![endif]-->
     <title>Making Waves Open device Lab</title>
 </head>
 <body>
-<header id="pruned" class="js-canvas-animation page-main-header">
-    <!-- TODO: Span unsupported delete or fill -->
-    <canvas><span class="unsupported"></span></canvas>
-    <div class="content-wrapper cf">
+<header class=" page-main-header js-cnv-animation" id="cnv-curves">
+
+
+    <div class="content-wrapper  cf">
         <h1 class="logo l-float-left">
-            <strong>Open Device Lab</strong><br/>          
+            <strong>Open Device Lab</strong><br/>
             <span>Kraków</span></h1>
-    <p class="l-float-right main-intro js-responsive-text">Making Waves Open Device Lab helps the local web developers to be able to test their work on the mobile
-        devices</p>
+
+        <p class="l-float-right main-intro js-responsive-text">Making Waves Open Device Lab helps the local web
+            developers to be able to test their work on the mobile
+            devices</p>
         <a href="#map-section" class="btn">Visit the lab</a>
 
-     <ul class="cf animate">
-         <li id="animate-el-1"><img  src="img/cup.svg" alt="cup">
-         </li>
-         <li id="animate-el-2" class="shake">
-             <div><img src="img/ipad_mini1.svg" alt="ipad_mini"></div>
-         </li>
-         <li id="animate-el-3">
-             <div><img src="img/computer.svg" alt="computer"></div>
-         </li>
-         <li id="animate-el-4" class="shake">
-             <div> <img src="img/iphone_white.svg" alt="ihone_white"></div>
-         </li>
-         <li id="animate-el-5" class="shake">
-             <div><img src="img/blackberry.svg" alt="blackberry"></div>
-         </li>
-     </ul>
-        <!-- TODO: move to canvas element -->
-    <noscript><img src="img/devices.png" alt="package of different electronic devices - from mobile phones to the computer"></noscript>
+        <ul class="cf animate">
+            <li id="animate-el-1"><img src="img/cup.svg" alt="cup">
+            </li>
+            <li id="animate-el-2" class="shake">
+                <div><img src="img/ipad_mini.svg" alt="ipad_mini"></div>
+            </li>
+            <li id="animate-el-3">
+                <div><img src="img/computer.svg" alt="computer"></div>
+            </li>
+            <li id="animate-el-4" class="shake">
+                <div><img src="img/iphone_white.svg" alt="ihone_white"></div>
+            </li>
+            <li id="animate-el-5" class="shake">
+                <div><img src="img/blackberry.svg" alt="blackberry"></div>
+            </li>
+        </ul>
     </div>
-
+    <canvas><span class="unsupported"><img src="img/devices.png"
+                                           alt="package of different electronic devices - from mobile phones to the computer"></span>
+    </canvas>
 </header>
 
 
-<section  class="theme-dark l-p100">
+<section class="theme-dark l-pv100 test">
     <div class="content-wrapper">
         <h1 class="l-hidden">About the project</h1>
         <ul class="l-three-in-row cf">
             <li class="l-float-left l-row-item">
                 <h2>About the project</h2>
+
                 <p>The web doesn't live on a desk anymore and we now need to test our work on multiple devices, instead
                     of just few desktop browsers.</p>
             </li>
@@ -76,7 +81,7 @@
         </ul>
     </div>
 </section>
-<section  class="theme-light l-p100 l-additional-gutter">
+<section class="theme-light l-pv100 l-ph-100">
     <div class="content-wrapper">
         <h1 class="section-heading">Device Library</h1>
         <table class="tabular-info sortable">
@@ -118,14 +123,15 @@
     </div>
 </section>
 
-<section id="map-section" class="theme-dark l-p100 l-additional-gutter">
+<section id="map-section" class="theme-dark l-pv100 l-ph-100">
     <div class="content-wrapper">
         <h1 class="section-heading">Visit the lab</h1>
 
         <div class="google-map" id="map-canvas"></div>
 
         <div class="l-two-in-row cf">
-            <p class="l-float-left l-row-item">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras accumsan aliquam
+            <p class="l-float-left l-row-item">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras accumsan
+                aliquam
                 fringilla. Sed in metus eu
                 nunc vehicula tempus quis nec magna. Vestibulum ac iaculis est, quis faucibus nulla. Vivamus luctus
                 dolor
@@ -144,11 +150,11 @@
         </div>
     </div>
 </section>
-    
-    <script src="js/jquery.2.1.0.min.js" type="text/javascript"></script>
-    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDlY9QSNc0dlyEASbZBo1EmG3E1rncBSYg&sensor=false"></script>
-    <script src="js/sortable.js" type="text/javascript"></script>
-    <script src="js/fit-text.js"></script>
+
+<script src="js/jquery.2.1.0.min.js" type="text/javascript"></script>
+<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDlY9QSNc0dlyEASbZBo1EmG3E1rncBSYg&sensor=false"></script>
+<script src="js/sortable.js" type="text/javascript"></script>
+<script src="js/fit-text.js"></script>
 <script src="js/draw-lines.js" type="text/javascript"></script>
 <script src="js/main.js" type="text/javascript"></script>
 </body>

@@ -2,14 +2,16 @@ html, body {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
+
 strong {
   font-weight: bold;
 }
-body{
+
+body {
   font-family: Arial, no-serif;
   font-size: 18px;
   color: $text-color-light;
-  
+
   line-height: 1.4em;
 }
 
@@ -20,12 +22,14 @@ body{
   font-weight: bold;
   line-height: 1.4em;
 }
-h2{
+
+h2 {
   font-size: 22px;
   line-height: 1.4em;
   color: $heading-color-light;
   font-weight: bold;
 }
+
 .section-heading {
   font-size: 28px;
   line-height: 1.2em;
@@ -34,10 +38,10 @@ h2{
 
 /*LINKS*/
 
-a{
+a {
   text-decoration: none;
   color: $links-color-light;
-  &:hover{
+  &:hover {
     text-decoration: underline;
   }
 }

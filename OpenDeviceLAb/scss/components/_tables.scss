@@ -10,7 +10,7 @@
     font-weight: bold;
     th {
       text-align: left;
-    }   
+    }
     th.sorttable_sorted .icon-sortable, th.sorttable_sorted_reverse .icon-sortable {
       display: none;
     }
@@ -29,8 +29,8 @@
     }
   }
 
-/*--------------------- desktop version*/
-@include media-query(lap-and-up) {
+  /*--------------------- desktop version*/
+  @include media-query(lap-and-up) {
     th {
       cursor: pointer;
     }
@@ -41,18 +41,18 @@
       font-weight: bold;
     }
   }
-/*--------------------- mobile version*/
-@include media-query(palm) {
+  /*--------------------- mobile version*/
+  @include media-query(palm) {
     max-width: 100%;
-  
-  thead tr {
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
-  }
-   table,  thead,  tbody, th,  td,  tr {
-    display: block;
-  }
+
+    thead tr {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+    table, thead, tbody, th, td, tr {
+      display: block;
+    }
 
     tr {
       padding: 10px;
@@ -72,52 +72,53 @@
         content: attr(data-title);
       }
     }
-  
 
+  }
+}
 
-}
-}
 /*TABLE ICONS*/
- #sorttable_sortrevind,
-    #sorttable_sortfwdind,
-    .icon-sortable {
-      position: relative;
-      display: inline-block;
-      &:before, &:after {
-        display: block;
-        position: absolute;
-        margin-left: 5px;
-        vertical-align: middle;
-      }
-    }
+#sorttable_sortrevind,
+#sorttable_sortfwdind,
+.icon-sortable {
+  position: relative;
+  display: inline-block;
+  &:before, &:after {
+    display: block;
+    position: absolute;
+    margin-left: 5px;
+    vertical-align: middle;
+  }
+}
 
-    #sorttable_sortrevind,
-    #sorttable_sortfwdind {
-      height: 15px;
-      vertical-align: top;
-      &:after {
-        top: 0;
-      }
+#sorttable_sortrevind,
+#sorttable_sortfwdind {
+  height: 15px;
+  vertical-align: top;
+  &:after {
+    top: 0;
+  }
 
-    }
-    .icon-sortable:after, 
-    #sorttable_sortrevind:after {      
-        content: "\25B4";      
-    }
-    .icon-sortable:before,    
-    #sorttable_sortfwdind:after {
-        content: "\25BE";
-    }
+}
 
-    .icon-sortable {
-      height: 10px;
-      &:before {
-        top: 0;
-      }
-      &:after {
-        bottom: 0;
-      }
-    }
+.icon-sortable:after,
+#sorttable_sortrevind:after {
+  content: "\25B4";
+}
+
+.icon-sortable:before,
+#sorttable_sortfwdind:after {
+  content: "\25BE";
+}
+
+.icon-sortable {
+  height: 10px;
+  &:before {
+    top: 0;
+  }
+  &:after {
+    bottom: 0;
+  }
+}
 
 
 
