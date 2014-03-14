@@ -204,8 +204,10 @@ body {
         background-image: url("../img/sprite.png");
         background-color: transparent;
         background-repeat: no-repeat;
-        background-position: -133px 0;
-        background-size: 360%; }
+        background-position: -128px 0;
+        background-size: cover;
+        -ms-behavior: url("backgroundsize.min.htc");
+        behavior: url("backgroundsize.min.htc"); }
   .page-main-header .main-intro {
     margin-top: 60px;
     /*------------------------- Tablet & Desktop */
@@ -254,10 +256,15 @@ body {
       display: block;
       width: 75px;
       height: 70px;
-      background: url("../img/sprite.svg") -62px 0 no-repeat; }
+      background: url("../img/sprite.svg") no-repeat -62px 0; }
       .no-svg .section-footer h2:before {
-        background: url("../img/sprite.png") -60px 0 no-repeat;
-        background-size: 260%; }
+        position: relative;
+        background: url("../img/sprite.png") -62px 0 no-repeat;
+        background-size: cover;
+        height: 60px;
+        margin-bottom: 10px;
+        -ms-behavior: url("backgroundsize.min.htc");
+        behavior: url("backgroundsize.min.htc"); }
 
 /*Components*/
 /*BUTTON*/
@@ -274,18 +281,16 @@ body {
   color: white;
   background: #2a6c62;
   border-radius: 5px;
-  /*---------------------------- Desktop & Tablet version*/
+  position: absolute;
+  right: 10px;
+  top: 30px;
   /*---------------------------- Mobile version */ }
   .btn:hover {
     text-decoration: none;
     background: #389183; }
-  @media (min-width: 768px) {
-    .page-main-header .btn {
-      position: absolute;
-      right: 10px;
-      top: 30px; } }
   @media (max-width: 767px) {
     .page-main-header .btn {
+      position: static;
       margin: 35px 0 45px 0; } }
 
 .animate {
@@ -746,24 +751,25 @@ canvas {
   bottom: 0;
   left: 0; }
 
-.ie8 canvas {
-  position: static;
-  max-width: 1170px;
+.unsupported img {
+  max-width: 100%;
+  display: block;
   margin: 0 auto; }
 
 /*TABLE*/
 .tabular-info {
   width: 100%;
   background: #efeaf0;
-  /*--------------------- desktop version*/
   /*--------------------- mobile version*/ }
   .tabular-info th, .tabular-info td {
-    font-size: 16px; }
+    font-size: 16px;
+    padding: 20px; }
   .tabular-info thead {
     background: white;
     font-weight: bold; }
     .tabular-info thead th {
-      text-align: left; }
+      text-align: left;
+      cursor: pointer; }
     .tabular-info thead th.sorttable_sorted .icon-sortable, .tabular-info thead th.sorttable_sorted_reverse .icon-sortable {
       display: none; }
   .tabular-info tr {
@@ -772,15 +778,10 @@ canvas {
       border-top: none; }
   .tabular-info td {
     color: black; }
+    .tabular-info td:first-child {
+      font-weight: bold; }
     .tabular-info td a {
       color: #2c6a5f; }
-  @media (min-width: 768px) {
-    .tabular-info th {
-      cursor: pointer; }
-    .tabular-info th, .tabular-info td {
-      padding: 20px; }
-    .tabular-info td:first-child {
-      font-weight: bold; } }
   @media (max-width: 767px) {
     .tabular-info {
       max-width: 100%; }
@@ -792,11 +793,19 @@ canvas {
         display: block; }
       .tabular-info tr {
         padding: 10px; }
+      .tabular-info th, .tabular-info td {
+        padding: 0; }
       .tabular-info td {
         border: none;
         white-space: normal;
         text-align: left; }
+        .tabular-info td:first-child {
+          font-weight: normal; }
+        .tabular-info td span, .tabular-info td a {
+          display: inline-block;
+          width: 50%; }
         .tabular-info td:before {
+          vertical-align: top;
           width: 50%;
           display: inline-block;
           padding-right: 15px;

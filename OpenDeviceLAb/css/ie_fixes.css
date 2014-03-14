@@ -1,11 +1,3 @@
-.animate {
-  display: none; }
-
-.unsupported img {
-  max-width: 100%;
-  display: block;
-  margin: 20px auto; }
-
 .page-main-header {
   padding: 20px 0; }
   .page-main-header .logo {
@@ -16,13 +8,15 @@
     max-width: none;
     padding-left: 0; }
 
-.tabular-info thead .icon-sortable:before, .tabular-info thead .icon-sortable:after {
-  display: none; }
-
-.page-main-header canvas {
+canvas {
   position: static;
   max-width: 1170px;
   margin: 0 auto; }
 
-#map-canvas {
+.animate {
   display: none; }
+
+.l-three-in-row .l-row-item {
+  padding-right: 0; }
+  .l-three-in-row .l-row-item p, .l-three-in-row .l-row-item h2 {
+    padding-right: 15px; }

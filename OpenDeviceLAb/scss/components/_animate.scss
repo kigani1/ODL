@@ -198,8 +198,8 @@ canvas {
   left: 0;
 }
 
-.ie8 canvas {
-  position: static;
-  max-width: 1170px;
+.unsupported img {
+  max-width: 100%;
+  display: block;
   margin: 0 auto;
 }

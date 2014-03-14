@@ -1,0 +1,30 @@
+.page-main-header {
+  padding: 20px 0;
+  .logo{
+    float: none;
+    margin: 0;
+  }
+  .main-intro {
+    float: none;
+    max-width: none;
+    padding-left: 0;
+  }
+
+}
+  canvas {
+    position: static;
+    max-width: 1170px;
+    margin: 0 auto;
+  }
+  .animate{
+    display: none;
+  }
+
+  .l-three-in-row{
+    .l-row-item{
+      padding-right: 0;
+      p, h2{
+        padding-right: 15px
+      }
+    }
+  }

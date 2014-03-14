@@ -4,12 +4,14 @@
   background: $table-bg-color;
   th, td {
     font-size: 16px;
+    padding: 20px;
   }
   thead {
     background: $bg-color-theme-lightest;
     font-weight: bold;
     th {
       text-align: left;
+      cursor: pointer;
     }
     th.sorttable_sorted .icon-sortable, th.sorttable_sorted_reverse .icon-sortable {
       display: none;
@@ -23,24 +25,15 @@
   }
   td {
     color: $text-color-dark;
+    &:first-child{
+      font-weight: bold;
+    }
 
     a {
       color: $links-color-dark;
     }
   }
 
-  /*--------------------- desktop version*/
-  @include media-query(lap-and-up) {
-    th {
-      cursor: pointer;
-    }
-    th, td {
-      padding: 20px;
-    }
-    td:first-child {
-      font-weight: bold;
-    }
-  }
   /*--------------------- mobile version*/
   @include media-query(palm) {
     max-width: 100%;
@@ -57,12 +50,23 @@
     tr {
       padding: 10px;
     }
+    th,td{
+      padding: 0;
+    }
     td {
+
       border: none;
       white-space: normal;
       text-align: left;
-
+      &:first-child{
+        font-weight: normal;
+      }
+      span, a{
+        display: inline-block;
+        width: 50%;
+      }
       &:before {
+        vertical-align: top;
         width: 50%;
         display: inline-block;
         padding-right: 15px;

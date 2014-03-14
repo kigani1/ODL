@@ -8,21 +8,19 @@
   color: $text-color-lightest;
   background: $button-bg-color;
   border-radius: $border-radius-base;
+  position: absolute;
+  right: 10px;
+  top: 30px;
   &:hover {
     text-decoration: none;
     background: lighten($button-bg-color, 10);
   }
-  /*---------------------------- Desktop & Tablet version*/
-  @include media-query(lap-and-up) {
-    .page-main-header & {
-      position: absolute;
-      right: 10px;
-      top: 30px;
-    }
-  }
+
+
   /*---------------------------- Mobile version */
   @include media-query(palm) {
     .page-main-header & {
+      position: static;
       margin: 35px 0 45px 0;
     }
   }
