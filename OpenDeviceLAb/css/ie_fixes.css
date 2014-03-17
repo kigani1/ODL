@@ -20,3 +20,11 @@ canvas {
   padding-right: 0; }
   .l-three-in-row .l-row-item p, .l-three-in-row .l-row-item h2 {
     padding-right: 15px; }
+
+.no-svg .section-footer h2:before {
+  background: url("../img/sprite.png") -120px 0 no-repeat;
+  background-size: auto; }
+
+.no-svg .page-main-header .logo:before {
+  background-position: -264px -2px;
+  background-size: auto; }

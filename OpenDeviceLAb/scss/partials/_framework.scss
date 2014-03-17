@@ -59,14 +59,13 @@ body {
       background-position: -148px -3px;
       position: absolute;
       left: 0;
+
       .no-svg & {
         background-image: url("../img/sprite.png");
         background-color: transparent;
         background-repeat: no-repeat;
-        background-position: -128px 0;
-        background-size: cover;
-        -ms-behavior: url("backgroundsize.min.htc");
-        behavior: url("backgroundsize.min.htc");
+        background-position: -102px -29px;
+        background-size: 300%;
       }
     }
 
@@ -133,12 +132,10 @@ body {
       background: url('../img/sprite.svg') no-repeat -62px 0 ;
       .no-svg & {
         position: relative;
-        background: url('../img/sprite.png') -62px 0 no-repeat;
-        background-size: cover;
+        background: url('../img/sprite.png') -34px -39px no-repeat;
+        background-size: 250%;
         height: 60px;
         margin-bottom: 10px;
-        -ms-behavior: url("backgroundsize.min.htc");
-        behavior: url("backgroundsize.min.htc");
       }
     }
 

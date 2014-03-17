@@ -33,7 +33,7 @@ var openDeviceLab = {
             url: "img/sprite.png",
             size: new google.maps.Size(38, 45),
             //origin: new google.maps.Point(0, 0),
-            scaledSize: new google.maps.Size(160, 45)
+            scaledSize: new google.maps.Size(168, 78)
         };
         var marker = new google.maps.Marker({
             position: mapOptions.center,

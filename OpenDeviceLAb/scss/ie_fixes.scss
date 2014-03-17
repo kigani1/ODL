@@ -28,3 +28,15 @@
       }
     }
   }
+
+.no-svg .section-footer h2:before {
+    background: url('../img/sprite.png') -120px 0 no-repeat;
+    background-size: auto;
+}
+.no-svg .page-main-header  .logo:before{
+  background-position: -264px -2px;
+  background-size: auto;
+}
+
+
+
