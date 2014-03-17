@@ -2,7 +2,7 @@ function drawVineWithLattice(context, lattice, x, y, interations, sort, prune) {
 
     // Set stroke colour
     context.lineWidth = 1.5;
-    context.strokeStyle = "rgb(255, 255, 255)";
+    context.strokeStyle = "#ddd";
 
     // Create initial branch
     var branches = new Array();

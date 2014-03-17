@@ -31,9 +31,8 @@ var openDeviceLab = {
             mapOptions);
         var icon = {
             url: "img/sprite.png",
-            size: new google.maps.Size(38, 45),
-            //origin: new google.maps.Point(0, 0),
-            scaledSize: new google.maps.Size(168, 78)
+            size: new google.maps.Size(38, 50),
+            scaledSize: new google.maps.Size(168, 88)
         };
         var marker = new google.maps.Marker({
             position: mapOptions.center,
