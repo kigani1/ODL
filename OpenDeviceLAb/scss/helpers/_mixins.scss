@@ -70,6 +70,12 @@ $portrait-end: $landscape-start - 1px;
     }
   }
 
+  @if $media-query == desk-wide{
+    @media (min-width: $desk-wide-start) {
+      @content;
+    }
+  }
+
 }
 
 

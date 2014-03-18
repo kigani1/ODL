@@ -99,6 +99,9 @@ body {
 .section-heading {
   text-align: center;
   margin-bottom: $base-spacing-unit-big;
+  @include media-query(palm){
+    margin-bottom: $base-spacing-unit-medium;
+  }
 }
 
 .theme-dark {

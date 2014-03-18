@@ -41,28 +41,25 @@ var openDeviceLab = {
 
         marker.setMap(map);
     },
+    addClass: function(el, value){
+        el.map(function(){
+            var self = this;
+            $(this).find('li').eq(0).addClass('done');
+            setInterval(function () {
+                var el = $(self).find('.done').last().next();
+                el.addClass('done');
+            }, value);
+        });
+    },
     animate: function () {
-        var numbers = [0.8, 1, 2],
-            options = ['ease', 'linear', 'ease-out', 'ease-in-out'];
-        var randomValue = function (array) {
-            return array[Math.floor(Math.random() * array.length)]
-        }
-        $('.animate').find('li').eq(0).addClass('done');
-        setInterval(function () {
-            var el = $('.done').last().next();
-            el.css({
-                '-webkit-transition-property': '-webkit-transform 2s, opacity 2s',
-                '-moz-transition-property': '-moz-transform 2s, opacity 2s',
-                '-ms-transition-property': '-ms-transform 2s, opacity 2s',
-                '-o-transition-property': '-o-transform 2s, opacity 2s',
-                'transition-property': 'transform 2s, opacity 2s',
-                'transition-duration': randomValue(numbers) + 's',
-                'transition-timing-function': randomValue(options)
-            });
-            el.addClass('done');
-
-        }, 50);
-
+        var self = this;
+        self.addClass($('.animate.sync'), 50);
+        $(window).scroll(function(){
+            var top = $(this).scrollTop();
+            if(top > $('.theme-light').offset().top -200){
+               self.addClass($('.animate.async'), 500);
+            }
+        });
 
     }
 

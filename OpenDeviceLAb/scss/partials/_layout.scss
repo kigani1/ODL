@@ -51,13 +51,24 @@
       padding-right: 0;
     }
   }
+  .l-three-in-row .l-row-item:first-child,
+  .l-three-in-row .l-row-item:first-child h2{
+    margin-top: 0;
+  }
+  .l-three-in-row .l-row-item:last-child{
+    margin-bottom: 0;
+  }
 }
 
-.l-pv100 {
+.l-pv {
   padding: 100px 0;
+  @include media-query(palm) {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
 }
 
-.l-ph-100 {
+.l-ph {
   padding-left: 100px;
   padding-right: 100px;
   @include media-query(portable) {
@@ -65,4 +76,5 @@
     padding-right: 0;
   }
 }
+
 
