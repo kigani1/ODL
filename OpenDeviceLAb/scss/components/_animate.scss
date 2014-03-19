@@ -194,7 +194,11 @@
       display: inline-block;
       float: none;
       position: relative;
+      .no-svg &{
+        display: none;
+      }
     }
+
   }
   #animate-el-2 div:before, #animate-el-4 div:before, {
     background: #404045;
