@@ -146,26 +146,3 @@ function distancePointToLine(point, line) {
     }
 }
 
-
-// Get context
-$(document).ready(function () {
-
-
-    $(".js-cnv-animation").each(function () {
-        // Get context
-        var canvas = $(this).children("canvas")[0];
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        if (canvas.getContext) {
-            var ctx = canvas.getContext("2d");
-
-            var height = $('#cnv-curves').height();
-            var width = $('#cnv-curves').width();
-            // Draw lines
-            var prune = $(this).attr("id") == "cnv-curves";
-            drawVineWithLattice(ctx, new Array(), (width * 0.5), (height * 0.8), 100, false, prune);
-        }
-
-
-    });
-});
