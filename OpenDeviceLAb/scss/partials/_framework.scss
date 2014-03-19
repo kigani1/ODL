@@ -10,7 +10,7 @@ body {
   position: relative;
   z-index: 100;
   h2 {
-    margin: $base-spacing-unit 0;
+    margin-bottom: $base-spacing-unit;
   }
   /*---------------------------- Tablet & Mobile version*/
   @include media-query(portable) {
@@ -99,22 +99,36 @@ body {
 .section-heading {
   text-align: center;
   margin-bottom: $base-spacing-unit-big;
-  @include media-query(palm){
+  @include media-query(palm) {
     margin-bottom: $base-spacing-unit-medium;
   }
 }
 
-.theme-dark {
-  background-color: $bg-color-theme-dark;
-  .section-heading {
-    color: $heading-color-light;
+.content-box {
+  padding: 100px 0;
+  @include media-query(palm) {
+    padding-top: 50px;
+    padding-bottom: 50px;
   }
-}
-
-.theme-light {
-  background-color: $bg-color-theme-lightest;
-  .section-heading {
-    color: $heading-color-dark;
+  &.narrow {
+    padding-left: 100px;
+    padding-right: 100px;
+    @include media-query(portable) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  &.theme-dark {
+    background-color: $bg-color-theme-dark;
+    .section-heading {
+      color: $heading-color-light;
+    }
+  }
+  &.theme-light {
+    background-color: $bg-color-theme-lightest;
+    .section-heading {
+      color: $heading-color-dark;
+    }
   }
 }
 
@@ -132,7 +146,7 @@ body {
       display: block;
       width: 75px;
       height: 70px;
-      background: url('../img/sprite.svg') no-repeat -62px 0 ;
+      background: url('../img/sprite.svg') no-repeat -62px 0;
       .no-svg & {
         position: relative;
         background: url('../img/sprite.png') -34px -39px no-repeat;

@@ -125,6 +125,7 @@ a {
   .l-two-in-row .l-row-item:nth-child(2) {
     width: 40%; }
 
+/*------------------ mobile version*/
 @media (max-width: 767px) {
   .l-float-left {
     float: none; }
@@ -137,27 +138,11 @@ a {
     width: 100%;
     padding-right: 0; }
 
-  .l-three-in-row .l-row-item:first-child,
-  .l-three-in-row .l-row-item:first-child h2 {
+  .l-three-in-row .l-row-item:first-child {
     margin-top: 0; }
 
   .l-three-in-row .l-row-item:last-child {
     margin-bottom: 0; } }
-.l-pv {
-  padding: 100px 0; }
-  @media (max-width: 767px) {
-    .l-pv {
-      padding-top: 50px;
-      padding-bottom: 50px; } }
-
-.l-ph {
-  padding-left: 100px;
-  padding-right: 100px; }
-  @media (max-width: 1024px) {
-    .l-ph {
-      padding-left: 0;
-      padding-right: 0; } }
-
 body {
   background: white;
   overflow-x: hidden; }
@@ -170,7 +155,7 @@ body {
   z-index: 100;
   /*---------------------------- Tablet & Mobile version*/ }
   .content-wrapper h2 {
-    margin: 20px 0; }
+    margin-bottom: 20px; }
   @media (max-width: 1024px) {
     .content-wrapper {
       padding: 0 10px; } }
@@ -245,15 +230,27 @@ body {
     .section-heading {
       margin-bottom: 30px; } }
 
-.theme-dark {
-  background-color: #3a424d; }
-  .theme-dark .section-heading {
-    color: white; }
-
-.theme-light {
-  background-color: white; }
-  .theme-light .section-heading {
-    color: black; }
+.content-box {
+  padding: 100px 0; }
+  @media (max-width: 767px) {
+    .content-box {
+      padding-top: 50px;
+      padding-bottom: 50px; } }
+  .content-box.narrow {
+    padding-left: 100px;
+    padding-right: 100px; }
+    @media (max-width: 1024px) {
+      .content-box.narrow {
+        padding-left: 0;
+        padding-right: 0; } }
+  .content-box.theme-dark {
+    background-color: #3a424d; }
+    .content-box.theme-dark .section-heading {
+      color: white; }
+  .content-box.theme-light {
+    background-color: white; }
+    .content-box.theme-light .section-heading {
+      color: black; }
 
 /*FOOTER*/
 .section-footer {
@@ -363,48 +360,8 @@ body {
 
     100% {
       -webkit-transform: translate(1px, -2px) rotate(-1deg); } }
-  /*
-    @include keyframes(spaceboots) {
-      0% {
-        @include vendor(transform, translate(2px, 1px) rotate(0deg));
-      }
-      10% {
-        @include vendor(transform, translate(-1px, -2px) rotate(-1deg));
-      }
-      20% {
-        @include vendor(transform, translate(-3px, 0px) rotate(1deg));
-      }
-      30% {
-        @include vendor(transform, translate(0px, 2px) rotate(0deg));
-      }
-      40% {
-        @include vendor(transform, translate(1px, -1px) rotate(1deg));
-      }
-      50% {
-        @include vendor(transform, translate(-1px, 2px) rotate(-1deg));
-      }
-      60% {
-        @include vendor(transform, translate(-3px, 1px) rotate(0deg));
-      }
-      70% {
-        @include vendor(transform, translate(2px, 1px) rotate(-1deg));
-      }
-      80% {
-        @include vendor(transform, translate(-1px, -1px) rotate(1deg));
-      }
-      90% {
-        @include vendor(transform, translate(2px, 2px) rotate(0deg));
-      }
-      100% {
-        @include vendor(transform, translate(1px, -2px) rotate(-1deg));
-      }
-    }*/
   .hover-on .done.shake:hover {
     -webkit-animation: spaceboots 0.8s linear infinite;
-    -moz-animation: spaceboots 0.8s linear infinite;
-    -ms-animation: spaceboots 0.8s linear infinite;
-    -o-animation: spaceboots 0.8s linear infinite;
-    animation: spaceboots 0.8s linear infinite;
     -webkit-transform-origin: 50% 50%; }
 
   .hover-on #animate-el-1.done:hover {
@@ -427,12 +384,11 @@ body {
     -moz-transition: -moz-transform 2s, opacity 2s;
     -ms-transition: -ms-transform 2s, opacity 2s;
     -o-transition: -o-transform 2s, opacity 2s;
-    transition: transform 2s, opacity 2s; }
-
-  .fade-in li {
-    padding-right: 5%;
+    transition: transform 2s, opacity 2s;
+    padding-right: 5%; }
+  .animate.fade-in > * {
     opacity: 0; }
-    .fade-in li.done {
+    .animate.fade-in > *.done {
       opacity: 1; }
 
   #animate-el-1 {
@@ -559,6 +515,7 @@ body {
       position: absolute;
       left: 50px; }
       .animation-bg .animate li {
+        padding-right: 0;
         -webkit-transition-duration: 1s;
         -moz-transition-duration: 1s;
         -ms-transition-duration: 1s;

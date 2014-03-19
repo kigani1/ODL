@@ -1,6 +1,6 @@
 .page-main-header {
   padding: 20px 0;
-  .logo{
+  .logo {
     float: none;
     margin: 0;
   }
@@ -11,29 +11,32 @@
   }
 
 }
-  canvas {
-    position: static;
-    max-width: 1170px;
-    margin: 0 auto;
-  }
-  .animate{
-    display: none;
-  }
 
-  .l-three-in-row{
-    .l-row-item{
-      padding-right: 0;
-      p, h2{
-        padding-right: 15px
-      }
+canvas {
+  position: static;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+.animate {
+  display: none;
+}
+
+.l-three-in-row {
+  .l-row-item {
+    padding-right: 0;
+    p, h2 {
+      padding-right: 15px
     }
   }
+}
 
 .no-svg .section-footer h2:before {
-    background: url('../img/sprite.png') -120px 0 no-repeat;
-    background-size: auto;
+  background: url('../img/sprite.png') -120px 0 no-repeat;
+  background-size: auto;
 }
-.no-svg .page-main-header  .logo:before{
+
+.no-svg .page-main-header .logo:before {
   background-position: -264px -2px;
   background-size: auto;
 }
