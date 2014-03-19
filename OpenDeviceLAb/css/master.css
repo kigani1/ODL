@@ -671,7 +671,7 @@ body {
     }
 }
 
-/*------------ Desktop wide -------------*/
+/*------------ Desktop wide */
 @media (min-width: 1900px) {
     .animation-bg {
         position: relative;
