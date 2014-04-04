@@ -9,13 +9,22 @@
   thead {
     background: $bg-color-theme-lightest;
     font-weight: bold;
-    th {
+  }
+  th {
       text-align: left;
       cursor: pointer;
-    }
-    th.sorttable_sorted .icon-sortable, th.sorttable_sorted_reverse .icon-sortable {
+      &:hover{
+        color: $text-color-dark;
+      }
+   }
+   .sorttable_nosort{
+      cursor: default;
+      &:hover{
+        color: $text-color-light;
+      }
+   }
+   th.sorttable_sorted .icon-sortable, th.sorttable_sorted_reverse .icon-sortable {
       display: none;
-    }
   }
   tr {
     border-top: 1px solid #d9d4da;

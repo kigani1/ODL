@@ -227,8 +227,10 @@
 @include media-query(desk-wide) {
   .animation-bg {
     position: relative;
-    z-index: -2;
     padding-bottom: 200px;
+    & + *{
+     position: relative;
+    }
     .animate {
       display: block;
       position: absolute;

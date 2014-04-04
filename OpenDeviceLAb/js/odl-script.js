@@ -35,10 +35,12 @@ var openDeviceLab = {
             scrollTop: scrollTo.offset().top
         }, 1000);
     },
+   
     mapInit: function () {
+        var isDraggable = window.matchMedia("(min-width: 767px)").matches ? true : false;
         var mapOptions = {
             center: new google.maps.LatLng(50.067161, 19.934900),
-            draggable: false,
+            draggable: isDraggable,
             zoom: 15
         };
         var map = new google.maps.Map(document.getElementById("map-canvas"),
@@ -52,7 +54,6 @@ var openDeviceLab = {
             position: mapOptions.center,
             icon: icon
         });
-
         marker.setMap(map);
     },
     addClass: function(el, value){
@@ -67,12 +68,16 @@ var openDeviceLab = {
     },
     animate: function () {
         var self = this;
+        var currBox = $('.animation-bg');
         self.addClass($('.animate.sync'), 50);
         $(window).scroll(function(){
             var top = $(this).scrollTop();
-            if(top > $('.theme-light').offset().top -200){
+            if(top > currBox.offset().top -200 && top < currBox.next().offset().top){
                 self.addClass($('.animate.async'), 500);
-            }
+            }else if(top > currBox.next().offset().top || top <  currBox.prev().offset().top ){
+              
+             $('.animate.async').find('li').removeClass('done')
+           }
         });
 
     }
