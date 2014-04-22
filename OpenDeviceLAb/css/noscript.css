@@ -24,5 +24,16 @@
   max-width: 1170px;
   margin: 0 auto; }
 
-#map-canvas {
-  display: none; }
+
+.google-map {
+  overflow: hidden;
+  position: relative;
+  
+}
+.google-map img{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -565px;
+    margin-top: -218px;  
+  }

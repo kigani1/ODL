@@ -28,7 +28,6 @@ var openDeviceLab = {
         if (!isMobile) {
             $('body').addClass('hover-on');
         }
-
     },
     scrollToPoint: function (scrollTo) {
         $('html, body').stop().animate({
@@ -43,6 +42,7 @@ var openDeviceLab = {
             draggable: isDraggable,
             zoom: 15
         };
+        
         var map = new google.maps.Map(document.getElementById("map-canvas"),
             mapOptions);
         var icon = {
@@ -67,16 +67,18 @@ var openDeviceLab = {
         });
     },
     animate: function () {
-        var self = this;
-        var currBox = $('.animation-bg');
+        var self = this,
+            currBox = $('.animation-bg'),
+            viewportHeight = $( window ).height(),
+            check = currBox.next().offset().top;
+        
         self.addClass($('.animate.sync'), 50);
         $(window).scroll(function(){
             var top = $(this).scrollTop();
-            if(top > currBox.offset().top -200 && top < currBox.next().offset().top){
+            if(top > (check -viewportHeight) && top < check){
                 self.addClass($('.animate.async'), 500);
-            }else if(top > currBox.next().offset().top || top <  currBox.prev().offset().top ){
-              
-             $('.animate.async').find('li').removeClass('done')
+            }else if(top > check|| top <  currBox.offset().top ){   
+             $('.animate.async').find('li').removeClass('done');
            }
         });
 

@@ -11,15 +11,15 @@
   }
 
 }
-
 canvas {
   position: static;
   max-width: 1170px;
   margin: 0 auto;
 }
 
-.animate {
+.animate{
   display: none;
+  overflow: hidden;
 }
 
 .l-three-in-row {

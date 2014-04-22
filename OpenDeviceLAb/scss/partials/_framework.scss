@@ -82,7 +82,6 @@ body {
     /*------------------------- Tablet portrait */
     @include media-query(portrait) {
       margin-top: 125px;
-      font-size: 33px;
       max-width: 58%;
     }
     /*---------------------------- Mobile version */
