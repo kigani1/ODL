@@ -3,7 +3,7 @@
   font-weight: bold;
   padding: 25px 35px;
   display: inline-block;
-  @include vendor(transition, all 0.8s);
+  @include vendorize(transition, all 0.8s, webkit ms moz);
   text-decoration: none;
   color: $text-color-lightest;
   background: $button-bg-color;

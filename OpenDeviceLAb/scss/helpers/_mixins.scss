@@ -1,7 +1,49 @@
-@mixin vendor($property, $value) {
-  @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
-    #{$prefix}#{$property}: $value;
+$prefix-moz: true;
+$prefix-webkit: true;
+$prefix-o: true;
+$prefix-ms: true;
+$prefix-spec: true;
+
+@mixin vendorize($prop, $value, $prefixes) {
+
+  @each $prefix in $prefixes {
+    @if $prefix == webkit {
+      @if $prefix-webkit {
+        -webkit-#{$prop}: $value;
+      }
+    }
+    @else if $prefix == moz {
+      @if $prefix-moz {
+        -moz-#{$prop}: $value;
+      }
+    }
+    @else if $prefix == ms {
+      @if $prefix-ms {
+        -ms-#{$prop}: $value;
+      }
+    }
+    @else if $prefix == o {
+      @if $prefix-o {
+        -o-#{$prop}: $value;
+      }
+    }
+    @else if $prefix == spec {
+      @if $prefix-spec {
+        #{$prop}: $value;
+      }
+    }
+    @else  {
+      @warn "Unrecognized prefix: #{$prefix}";
+    }
   }
+}
+
+@mixin prefixes-off() {
+  $prefix-moz: false;
+  $prefix-webkit: false;
+  $prefix-o: false;
+  $prefix-ms: false;
+  $prefix-spec: false;
 }
 
 @mixin vendor-value($property, $value, $value1: "") {
@@ -10,19 +52,93 @@
   }
 }
 
+// Keyframes without redundant -prefixes
 @mixin keyframes($name) {
-  @-webkit-keyframes #{$name} {
-    @content;
+  $root-prefix-moz: $prefix-moz;
+  $root-prefix-webkit: $prefix-webkit;
+  $root-prefix-o: $prefix-o;
+  $root-prefix-ms: $prefix-ms;
+  $root-prefix-spec: $prefix-spec;
+  
+  @if $root-prefix-moz {
+    @include prefixes-off();
+    $prefix-moz: true;
+    @-moz-keyframes #{$name} { @content; }
   }
-  @-moz-keyframes #{$name} {
-    @content;
+  @if $root-prefix-webkit {
+    @include prefixes-off();
+    $prefix-webkit: true;
+    @-webkit-keyframes #{$name} { @content; }
   }
-  @-ms-keyframes #{$name} {
-    @content;
+  @if $root-prefix-o {
+    @include prefixes-off();
+    $prefix-o: true;
+    @-o-keyframes #{$name} { @content; }
   }
-  @keyframes #{$name} {
-    @content;
+  @if $root-prefix-ms {
+    @include prefixes-off();
+    $prefix-ms: true;
+    @-ms-keyframes #{$name} { @content; }
   }
+  @if $root-prefix-spec {
+    @include prefixes-off();
+    $prefix-spec: true;
+    @keyframes #{$name} { @content; }
+  }
+
+  $prefix-moz: $root-prefix-moz;
+  $prefix-webkit: $root-prefix-webkit;
+  $prefix-o: $root-prefix-o;
+  $prefix-ms: $root-prefix-ms;
+  $prefix-spec: $root-prefix-spec; 
+} 
+
+@mixin shake($x, $y, $rot, $name, $steps:10, $opacity:false) {
+  $r:0deg;
+  $h:0px;
+  $v:0px; 
+  
+  @include keyframes($name){
+    $interval: $steps;
+    $step: 0%;
+
+    @while $step < 100% {
+      @if ($rot != 0deg){ $r : random($rot) - $rot/2;} 
+        @else { $r : 0deg; }
+      @if ($x != 0px){ $h : random($x) - $x/2; } 
+        @else { $h : 0px; }
+      @if ($y != 0px){ $v : random($y) - $y/2; } 
+        @else { $v : 0px; }
+    
+      @if($step == 0%){
+        #{$step} {
+          @include vendorize(transform, translate(0px, 0px) rotate(0deg), webkit ms spec);
+          @if($opacity){
+            opacity: random(10)/10;
+          }
+        }  
+      } @else {
+        #{$step} {
+          @include vendorize(transform, translate($h, $v) rotate($r), webkit ms spec);
+          @if($opacity){
+            opacity: random(10)/10; 
+          }
+        }
+      }
+      $step: $step + $interval;
+    }
+
+  }
+}
+
+// The animation
+@mixin animation($name, $dur: $duration, $iter: $iteration, $tim: $timing, $del: $delay, $sta: $state){
+	@include vendorize(animation-name, $name, webkit ms spec);
+	@include vendorize(animation-duration, $dur, webkit ms spec);
+	@include vendorize(animation-iteration-count, $iter, webkit ms spec);
+	@include vendorize(animation-timing-function, $tim, webkit ms spec);
+	@include vendorize(animation-delay, $del, webkit ms spec);
+	@include vendorize(animation-play-state, $sta, webkit ms spec);
 }
 
 $palm-end: $lap-start - 1px;
@@ -77,5 +193,4 @@ $portrait-end: $landscape-start - 1px;
   }
 
 }
-
 

@@ -14,7 +14,8 @@ canvas {
   margin: 0 auto; }
 
 .animate {
-  display: none; }
+  display: none;
+  overflow: hidden; }
 
 .l-three-in-row .l-row-item {
   padding-right: 0; }

@@ -54,7 +54,7 @@ table {
     &,
     &:before,
     &:after {
-      @include vendor(box-sizing, border-box);
+      @include vendorize(box-sizing, border-box, moz webkit spec);
     }
   }
 }

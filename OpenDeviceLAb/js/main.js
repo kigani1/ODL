@@ -1,5 +1,5 @@
 $(function () {
-    openDeviceLab.init();
+    PageModule.init();
     $(".js-responsive-text").fitText(1.2, {minFontSize: '16px', maxFontSize: '33px'});
     $(".js-cnv-animation").each(function () {
         // Get context
