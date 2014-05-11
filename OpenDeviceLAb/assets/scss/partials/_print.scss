@@ -2,6 +2,7 @@
   body, section, footer {
     background: #fff;
     color: #000;
+    font-size: 14px;
   }
   body a, section a, footer a {
     text-decoration: underline;
@@ -11,6 +12,8 @@
   .page-main-header .main-intro {
     max-width: 100%;
     color: #000;
+    font-size: 18px;
+    page-break-after: avoid;
   }
   .page-main-header .btn {
     display: none;
@@ -26,5 +29,10 @@
   }
   canvas {
     display: none;
+  }
+  h2,
+  .content-box.theme-dark .section-heading,
+  .section-footer {
+    color: #000;
   }
 }

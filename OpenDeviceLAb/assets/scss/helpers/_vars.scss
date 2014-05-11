@@ -35,3 +35,11 @@ $table-bg-color: $color-grey-lightest;
 
 /*BORDER RADIUS*/
 $border-radius-base: 5px;
+
+/* ANIMATION */
+$duration:100ms;
+$base-name:shake-base;
+$iteration:infinite;
+$timing:ease-in-out;
+$delay:0s;
+$state:running;
