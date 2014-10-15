@@ -78,7 +78,7 @@ var PageModule = (function () {
                 currBox = $('.animation-bg'),
                 viewportHeight = $(window).height(),
                 check = currBox.next().offset().top;
-            self.addClass($('.animate.sync'), 50);
+            self.addClass($('.animate.sync'), 200);
             $(window).scroll(function () {
                 var top = $(this).scrollTop();
                 if (top > (check - viewportHeight) && top < check) {
