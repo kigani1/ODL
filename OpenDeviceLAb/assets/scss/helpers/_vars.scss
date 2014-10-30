@@ -29,6 +29,7 @@ $bg-color-theme-dark: $color-grey-blue;
 $bg-color-theme-darker: $color-grey-blue-dark;
 $bg-color-theme-light: $color-grey-light;
 $bg-color-theme-lightest: $color-white;
+$bg-color-theme-medium: $color-turquoise;
 
 $button-bg-color: $color-dark-green;
 $table-bg-color: $color-grey-lightest;
@@ -37,9 +38,9 @@ $table-bg-color: $color-grey-lightest;
 $border-radius-base: 5px;
 
 /* ANIMATION */
-$duration:100ms;
-$base-name:shake-base;
-$iteration:infinite;
-$timing:ease-in-out;
-$delay:0s;
-$state:running;
+$duration: 100ms;
+$base-name: shake-base;
+$iteration: infinite;
+$timing: ease-in-out;
+$delay: 0s;
+$state: running;

@@ -1,0 +1,44 @@
+/*SIDEBAR*/
+.sidebar {
+    background: #2a3038;
+    color: #fff;
+    position: absolute;
+    right: 0;
+    bottom: 20px;
+    padding: 15px;
+    width: 280px;
+    @include media-query(palm) {
+        left: 0;
+        bottom: 0px;
+        width: auto;
+    }
+    .info {
+        position: relative;
+        padding-left: 60px;
+        &:before {
+            content: "";
+            background-image: url("../img/sprite.svg");
+            background-repeat: no-repeat;
+            background-position: -228px 0px;
+            width: 52px;
+            height: 80px;
+            display: block;
+            position: absolute;
+            left: 0;
+            top: -30px;
+            .no-svg & {
+                background-image: url("../img/sprite.png");
+                background-position: -205px -34px;
+                background-size: 500%;
+              }
+        }
+        @include media-query(palm) {
+            width: 250px;
+            margin: 0 auto;
+        }
+    }
+    
+    a {
+        font-size: 16px;
+    }
+}

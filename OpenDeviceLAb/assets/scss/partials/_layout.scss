@@ -12,6 +12,17 @@
   float: right;
 }
 
+.l-table {
+    display: table;
+    .l-row {
+        display: table-row;
+         > * {
+            display: table-cell;
+             padding-right: 5px;
+        } 
+    }  
+}
+
 .l-three-in-row {
   .l-row-item {
     width: 33%;
@@ -54,7 +65,7 @@
     margin-top: 0;
   }
   .l-three-in-row .l-row-item:last-child {
-    margin-bottom: 0;
+    margin-bottom: 60px;
   }
 }
 

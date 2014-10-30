@@ -55,7 +55,7 @@ var PageModule = (function () {
             var icon = {
                 url: "img/sprite.png",
                 size: new google.maps.Size(38, 50),
-                scaledSize: new google.maps.Size(168, 88)
+                scaledSize: new google.maps.Size(200, 88)
             };
             var marker = new google.maps.Marker({
                 position: mapOptions.center,

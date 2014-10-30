@@ -2,17 +2,22 @@
 @import 'helpers/_defaults.scss';
 @import 'helpers/_vars.scss';
 @import 'helpers/_mixins.scss';
+
 /*Base*/
 @import 'base/_reset';
 @import 'base/_clearfix';
+
 /*Partials*/
 @import 'partials/_typography.scss';
 @import 'partials/_layout.scss';
 @import 'partials/_framework.scss';
+
 /*Components*/
 @import "components/_buttons.scss";
 @import "components/_animate.scss";
 @import "components/_tables.scss";
 @import "components/_maps.scss";
+@import "components/_sidebar.scss";
+
 /*Media*/
 @import "partials/_print.scss";
