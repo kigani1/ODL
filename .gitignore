@@ -219,7 +219,6 @@ psd/
 node_modules/
 .sass-cache/
 
-http.js
 .idea/.name
 .idea/ODL.iml
 .idea/encodings.xml
