@@ -93,6 +93,14 @@ module.exports = function (grunt) {
                 }
             }
         },
+        copy: {
+            main: {
+                src: 'assets/favicon.ico',
+                dest: 'build/',
+                flatten: true,
+                expand: true
+              }
+        },
         clean : {
             build : {
                 src : ['build']
@@ -100,15 +108,7 @@ module.exports = function (grunt) {
         }
     });
     
-//    grunt.loadNpmTasks('grunt-contrib-concat');
-//    grunt.loadNpmTasks('grunt-contrib-uglify');
-//    grunt.loadNpmTasks('grunt-contrib-watch');
-//    grunt.loadNpmTasks('grunt-contrib-sass');
-//    grunt.loadNpmTasks('grunt-contrib-imagemin');
-//    grunt.loadNpmTasks('grunt-newer');
-//    grunt.loadNpmTasks('grunt-targethtml');
-
-    grunt.registerTask('prod', ['clean', 'targethtml', 'sass:prod' , 'concat', 'uglify', 'imagemin']);
+    grunt.registerTask('prod', ['clean', 'targethtml', 'sass:prod' , 'concat', 'uglify', 'imagemin', 'copy']);
     grunt.registerTask('default', ['watch']);
     
 };
