@@ -219,13 +219,4 @@ psd/
 node_modules/
 .sass-cache/
 
-.idea/.name
-.idea/ODL.iml
-.idea/encodings.xml
-.idea/misc.xml
-.idea/modules.xml
-.idea/scopes/scope_settings.xml
-.idea/vcs.xml
-.idea/workspace.xml
-OpenDeviceLAb/.idea/workspace.xml
-OpenDeviceLAb/.idea/workspace.xml
+.idea
